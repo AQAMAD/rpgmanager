@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Tasks" link_to="toc.xml#tasks"> 
+	<topic label="Building the story"  href="html/tasks/maintopic.html"> 
+		<topic label="Actors and events" href="html/tasks/subtopic.html" /> 
+	</topic>
+	<topic label="Running the game">
+		<topic label="Ressources at hand" href="html/tasks/subtopic2.html" /> 
+	</topic> 
+</toc>

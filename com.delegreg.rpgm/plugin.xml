@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.delegreg.rpgm.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.delegreg.rpgm.Perspective"
+            id="com.delegreg.rpgm.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="com.delegreg.rpgm.ui.views.CampaignsView"
+            icon="icons/elements/Campaign.png"
+            id="com.delegreg.rpgm.views.campaigns"
+            name="Campaigns"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.rpgm.ui.views.PDFDocView"
+            icon="icons/tools/pdfview/smpdf.gif"
+            id="com.delegreg.rpgm.views.pdf"
+            name="PDF"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.rpgm.ui.views.HttpDocView"
+            icon="icons/elements/WebPage.png"
+            id="com.delegreg.rpgm.views.http"
+            name="Browser"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.rpgm.ui.views.AudioPlayer"
+            icon="icons/elements/Audio.png"
+            id="com.delegreg.rpgm.views.audio"
+            name="Audio Player"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.rpgm.ui.views.ImageDocView"
+            icon="icons/elements/Image.png"
+            id="com.delegreg.rpgm.views.image"
+            name="Image"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.delegreg.rpgm.ui.editors.CampaignEditor"
+            default="false"
+            icon="icons/branding/Folder-Developer-16x16.png"
+            id="com.delegreg.rpgm.editors.campaign"
+            name="Campaign">
+      </editor>
+      <editor
+            class="com.delegreg.rpgm.ui.editors.ScenarioEditor"
+            default="false"
+            icon="icons/elements/Scenario.png"
+            id="com.delegreg.rpgm.editors.scenario"
+            name="Scenario">
+      </editor>
+      <editor
+            class="com.delegreg.rpgm.ui.editors.LocationEditor"
+            default="false"
+            icon="icons/elements/Location.png"
+            id="com.delegreg.rpgm.editors.location"
+            name="Location">
+      </editor>
+      <editor
+            class="com.delegreg.rpgm.ui.editors.ActorEditor"
+            default="false"
+            icon="icons/elements/Actor.png"
+            id="com.delegreg.rpgm.editors.actor"
+            name="Actor">
+      </editor>
+      <editor
+            class="com.delegreg.rpgm.ui.editors.SequenceEditor"
+            default="false"
+            icon="icons/elements/Sequence.png"
+            id="com.delegreg.rpgm.editors.sequence"
+            name="Sequence">
+      </editor>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.delegreg.rpgm.application"
+            name="RPGM Campaign Manager">
+         <property
+               name="appName"
+               value="RPGM Campaign Manager">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/branding/Folder-Developer-16x16.png,icons/branding/Folder-Developer-32x32.png,icons/branding/Folder-Developer-48x48.png,icons/branding/Folder-Developer-128x128.png">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="000000">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,360,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="1,385,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="aboutText"
+               value="%aboutText">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/branding/Folder-Developer-128x128.png">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.delegreg.rpgm.ui.GeneralPreferencePage"
+            id="com.delegreg.rpgm.preferences.general"
+            name="General Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Global RPGM Commands"
+            id="com.delegreg.rpgm.commands"
+            name="Global Commands">
+      </category>
+      <command
+            categoryId="com.delegreg.rpgm.commands"
+            description="Open the selected item"
+            id="com.delegreg.rpgm.editItem"
+            name="Edit Item">
+      </command>
+      <command
+            categoryId="com.delegreg.rpgm.commands"
+            description="Create a new item"
+            id="com.delegreg.rpgm.newItem"
+            name="New Item">
+      </command>
+      <command
+            description="Delete the selected item"
+            id="com.delegreg.rpgm.deleteItem"
+            name="Delete Item">
+      </command>
+      <command
+            description="Save As New File"
+            id="com.delegreg.rpgm.saveAs"
+            name="Save As">
+      </command>
+      <command
+            description="Rename the selected item"
+            id="com.delegreg.rpgm.renameItem"
+            name="Rename Item">
+      </command>
+      <command
+            description="Save the current file"
+            id="com.delegreg.rpgm.save"
+            name="Save">
+      </command>
+      <command
+            description="Import fragment file"
+            id="com.delegreg.rpgm.importItem"
+            name="Import">
+      </command>
+      <command
+            description="Export fragment file"
+            id="com.delegreg.rpgm.exportItem"
+            name="Export">
+      </command>
+      <command
+            description="Make ressources solid"
+            id="com.delegreg.rpgm.solidify"
+            name="Solidify">
+      </command>
+      <command
+            description="Clear workspace"
+            id="com.delegreg.rpgm.clearAll"
+            name="Clear">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.delegreg.rpgm.editItem">
+      </handler>
+   </extension>
+
+</plugin>

@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Basic
+Bundle-SymbolicName: com.delegreg.rpgm.games.basic;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: com.delegreg.rpgm.games.basic.Activator
+Bundle-Vendor: www.delegreg.com
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.delegreg.rpgm;bundle-version="0.1.0",
+ org.eclipse.ui.forms;bundle-version="3.4.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Eclipse-RegisterBuddy: com.delegreg.rpgm
+Import-Package: com.delegreg.core,
+ com.delegreg.rpgm.model

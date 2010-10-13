@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Concepts" link_to="toc.xml#concepts"> 
+	<topic label="Campaigns"  href="html/concepts/maintopic.html"> 
+		<topic label="Campaign contents" href="html/concepts/campaigns.html" /> 
+	</topic>
+	<topic href="html/concepts/maintopic.html" label="Scenarios">
+		<topic label="Scenario contents" href="html/concepts/scenarios.html" /> 
+	</topic>
+ <topic label="Topic">
+ </topic> 
+</toc>

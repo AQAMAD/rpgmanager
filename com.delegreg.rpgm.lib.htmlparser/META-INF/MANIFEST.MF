@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Html Parser Plug-in
+Bundle-SymbolicName: com.delegreg.rpgm.lib.htmlparser
+Bundle-Version: 1.0.1
+Bundle-ClassPath: htmllexer.jar
+Bundle-Vendor: www.delegreg.com
+Export-Package: org.htmlparser,
+ org.htmlparser.http,
+ org.htmlparser.lexer,
+ org.htmlparser.nodes,
+ org.htmlparser.scanners,
+ org.htmlparser.util,
+ org.htmlparser.util.sort,
+ org.htmlparser.visitors

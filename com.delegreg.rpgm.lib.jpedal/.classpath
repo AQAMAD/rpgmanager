@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="cid.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="bcprov.jar"/>
+	<classpathentry exported="true" kind="lib" path="clibwrapper_jiio.jar"/>
+	<classpathentry exported="true" kind="lib" path="jai_imageio.jar"/>
+	<classpathentry exported="true" kind="lib" path="jpedal_gpl.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
