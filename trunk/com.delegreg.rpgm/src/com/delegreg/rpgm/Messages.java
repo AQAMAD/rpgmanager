@@ -67,8 +67,6 @@ public class Messages extends NLS {
 	public static String NewItemWizard_Page1Text;
 	public static String NewItemWizard_Page2Name;
 	public static String NewItemWizard_Page2Text;
-	public static String OpenAllAction_ErrorMessage;
-	public static String OpenAllAction_ErrorTitle;
 	public static String OpenCampaignAction_Name;
 	public static String OpenCampaignAction_Tooltip;
 	public static String PDFDocView_Back10;

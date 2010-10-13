@@ -14,6 +14,7 @@
    </configIni>
 
    <launcherArgs>
+      <programArgs>-data @noDefault</programArgs>
       <vmArgs>-Dorg.jpedal.jai=true
 -Xms128m
 -Xmx1024m</vmArgs>

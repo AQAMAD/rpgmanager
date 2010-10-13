@@ -83,7 +83,7 @@ public class NewItemAction extends Action implements ISelectionListener,
 		  try {
 			IWorkbenchPage page = window.getActivePage();
 			  NewItemWizard wizard = new NewItemWizard();
-			  wizard.init(window.getWorkbench(),(BaseContaineableContainer) item);
+			  wizard.init(window.getWorkbench(),(BaseContainer) item);
 			  WizardDialog dialog = new WizardDialog(window.getShell(), wizard);
 			  dialog.open();		  
 			  //force it
