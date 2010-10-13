@@ -35,7 +35,7 @@ import com.delegreg.rpgm.model.SideQuest;
 
 public class RpgmRelationalAdapter {
 	
-	BaseContainer adapted;
+	IContainer adapted;
 
 	private static HashMap<Class,ArrayList<Class>> allowedChildren;
 	private static HashMap<Class,ArrayList<Class>> importableChildren;
@@ -316,7 +316,7 @@ public class RpgmRelationalAdapter {
 	}
 	
 	
-	public RpgmRelationalAdapter(BaseContaineableContainer  adapted) {
+	public RpgmRelationalAdapter(IContainer  adapted) {
 		super();
 		this.adapted = adapted;
 		allowedSubItems = allowedChildren.get(adapted.getClass());

@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public abstract class BaseRootContainer<V extends IContaineable> extends BaseContainer<V> {
 
-	private ArrayList<V> internal=new ArrayList<V>();
+	//private ArrayList<V> internal=new ArrayList<V>();
 	
 	public boolean addlink(V arg0) {
 		boolean result=internal.add(arg0);

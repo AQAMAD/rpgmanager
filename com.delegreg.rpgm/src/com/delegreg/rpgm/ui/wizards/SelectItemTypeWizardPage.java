@@ -23,6 +23,8 @@ import org.eclipse.ui.model.WorkbenchLabelProvider;
 
 import com.delegreg.core.BaseContaineable;
 import com.delegreg.core.BaseContaineableContainer;
+import com.delegreg.core.BaseContainer;
+import com.delegreg.core.IContaineable;
 import com.delegreg.core.INameable;
 import com.delegreg.rpgm.Messages;
 import com.delegreg.rpgm.core.RpgmRelationalAdapter;
@@ -101,7 +103,7 @@ public class SelectItemTypeWizardPage extends WizardPage {
 						return;
 					}else {
 						//System.out.println("selected");
-						BaseContaineable elem = (BaseContaineable) iter.next();
+						IContaineable elem = (IContaineable) iter.next();
 						((NewItemWizard)getWizard()).setModel(elem);						
 						getWizard().getContainer().updateButtons();
 					}
@@ -124,9 +126,9 @@ public class SelectItemTypeWizardPage extends WizardPage {
 		}
 	}
 
-	public void init(BaseContaineableContainer elem) {
+	public void init(BaseContainer initialSelection) {
 		try {
-			RpgmRelationalAdapter adapter=new RpgmRelationalAdapter(elem);
+			RpgmRelationalAdapter adapter=new RpgmRelationalAdapter(initialSelection);
 			for (Iterator iterator = adapter.getContentTypes().iterator(); iterator
 					.hasNext();) {
 				Class type = (Class) iterator.next();

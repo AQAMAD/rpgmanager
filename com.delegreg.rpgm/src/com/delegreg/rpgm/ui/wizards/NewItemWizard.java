@@ -10,7 +10,9 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import com.delegreg.core.BaseContaineable;
-import com.delegreg.core.BaseContaineableContainer;
+import com.delegreg.core.BaseContainer;
+import com.delegreg.core.IContaineable;
+import com.delegreg.core.IContainer;
 import com.delegreg.library.model.IDocument;
 import com.delegreg.library.model.Library;
 import com.delegreg.rpgm.Application;
@@ -23,7 +25,7 @@ public class NewItemWizard extends Wizard implements IWizard{
 
 	private SelectItemTypeWizardPage selectTypePage;
 	private NewItemDetailsWizardPage itemDetailsPage;
-	private BaseContaineableContainer initialSelection;
+	private BaseContainer initialSelection;
 	private boolean isComplete=false;
 	/**
 	 * @param isComplete the isComplete to set
@@ -35,7 +37,7 @@ public class NewItemWizard extends Wizard implements IWizard{
 	/**
 	 * @return the initialSelection
 	 */
-	public BaseContaineableContainer getInitialSelection() {
+	public BaseContainer getInitialSelection() {
 		return initialSelection;
 	}
 
@@ -49,12 +51,12 @@ public class NewItemWizard extends Wizard implements IWizard{
 		return super.canFinish();
 	}
 
-	private BaseContaineable model;
+	private IContaineable model;
 	private boolean isSideQuest;
 	
-	public void init(	IWorkbench workbench,	BaseContaineableContainer selection) 
+	public void init(	IWorkbench workbench,	BaseContainer item) 
 	{
-		initialSelection = selection;
+		initialSelection = item;
 	}
 	
 	public void addPages() {
@@ -104,7 +106,7 @@ public class NewItemWizard extends Wizard implements IWizard{
 	private void performOperation(IProgressMonitor monitor) {
 		//get the model and the parent, and add them to one another
 		//System.out.println("po"); //$NON-NLS-1$
-		BaseContaineableContainer parent=getInitialSelection();
+		IContainer parent=getInitialSelection();
 		RpgmRelationalAdapter adapter=new RpgmRelationalAdapter(parent);
 		adapter.addSubObject(model);
 		if (parent instanceof Library && model instanceof IDocument){
@@ -117,7 +119,7 @@ public class NewItemWizard extends Wizard implements IWizard{
 		}
 	}
 
-	public void setModel(BaseContaineable model) {
+	public void setModel(IContaineable model) {
 		this.model = model;
 		isSideQuest=false;
 	}

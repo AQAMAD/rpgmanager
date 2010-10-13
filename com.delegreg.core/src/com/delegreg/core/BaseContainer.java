@@ -40,7 +40,7 @@ public abstract class BaseContainer<V extends IContaineable> implements IContain
 	    return this;
   }	
   
-	private ArrayList<V> internal=new ArrayList<V>();
+	protected ArrayList<V> internal=new ArrayList<V>();
 
 	@Override
 	public boolean add(V arg0) {

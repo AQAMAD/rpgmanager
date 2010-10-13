@@ -55,7 +55,7 @@ public class OpenAllAction extends Action implements IWorkbenchAction {
 					Application.setCurrentFileName((new File(fileName)).getName());
 					Application.setCurrentCampaigns(newRoot);
 				} catch (IOException e) {
-					MessageDialog.openError(window.getShell(), Messages.OpenAllAction_ErrorTitle, Messages.OpenAllAction_ErrorMessage);
+					MessageDialog.openError(window.getShell(), Messages.File_LoadErrorTitle, Messages.File_LoadErrorMessage);
 					e.printStackTrace();
 				}
 			}
