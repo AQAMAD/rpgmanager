@@ -1,0 +1,83 @@
+<project name="com.delegreg.rpgm" default="build">
+	<!--sets the path of the properties file-->
+	<property file="build.properties" />
+	<property name="pdeBuildPluginVersion" value="3.5.0.v20090527-1800" />
+	<property name="equinoxLauncherPluginVersion" value="1.0.200.v20090520" />
+	<property name="eclipseLocation" value="c:/eclipse3.5/eclipse" />
+	<property name="workspacelocation" value="c:/workspace3.5/" />
+	<property name="builderlocation" value="${workspacelocation}com.delegreg.rpgm.builder" />
+
+	<target name="clean">
+		<delete dir="${buildDirectory}" failonerror="false"/>
+	</target>
+
+	<target name="init">
+		<mkdir dir="${buildDirectory}" />
+		<mkdir dir="${buildDirectory}/plugins" />
+		<mkdir dir="${buildDirectory}/features" />
+		<copy todir="${buildDirectory}/plugins">
+			<fileset dir="${workspacelocation}">
+				<include name="com.delegreg.rpgm/**" />
+				<include name="com.delegreg.rpgm.help/**" />
+				<include name="com.delegreg.rpgm.lib.javazoom/**" />
+				<include name="com.delegreg.rpgm.lib.htmlparser/**" />
+				<include name="com.delegreg.rpgm.lib.jpedal/**" />
+				<include name="com.delegreg.rpgm.lib.xstream/**" />
+				<include name="net.jonbuck.texteditor/**" />
+				<include name="net.jonbuck.texteditor.nl/**" />
+				<include name="org.apache.commons.lang/**" />
+			</fileset>
+		</copy>
+		<copy todir="${buildDirectory}/features">
+			<fileset dir="${workspacelocation}">
+				<include name="com.delegreg.rpgm.feature/**" />
+			</fileset>
+		</copy>
+	</target>
+
+
+	<!--
+		This target actually executes the PDE Build process by launching the 
+		Eclipse antRunner application.
+	-->
+	<target name="pde-build">
+		<java classname="org.eclipse.equinox.launcher.Main" fork="true" failonerror="true">
+			<arg value="-application" />
+			<arg value="org.eclipse.ant.core.antRunner" />
+			<arg value="-buildfile" />
+			<arg value="${eclipseLocation}/plugins/org.eclipse.pde.build_${pdeBuildPluginVersion}/scripts/productBuild/productBuild.xml" />
+			<arg value="-Dtimestamp=${timestamp}" />
+			<classpath>
+				<pathelement location="${baseLocation}/plugins/org.eclipse.equinox.launcher_${equinoxLauncherPluginVersion}.jar" />
+			</classpath>
+		</java>
+	</target>
+
+	<fileset id="results" dir="${buildDirectory}/${buildLabel}">
+		<include name="*.zip" />
+	</fileset>
+
+	<target name="deploy">
+		<tstamp prefix="build"/>
+		<move todir="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}">
+			<fileset refid="results" />
+		</move>
+		<move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
+			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
+		<move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
+			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>		
+		<move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
+			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>		
+	</target>
+	
+	<target name="ftp">
+		<ftp password="jester" server="delegreg.com" userid="toto" 
+			remotedir="/web/rpgm/" action="send"
+			verbose="true">
+			<fileset refid="results" />
+		</ftp>
+	</target>		
+	
+	<!--This target defines the run-order of the targets-->
+	<target name="build" depends="clean, init, pde-build, deploy" />
+</project>

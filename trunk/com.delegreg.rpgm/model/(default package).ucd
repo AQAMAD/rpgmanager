@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="(default package)" size="1524,1433" id="" metadata="uml2-1.0" initialized="true" zoom="0.5" scrolledX="158" scrolledY="78" tag="1000" key="32303037303533312D3130303020636F6D2E64656C65677265672E7270676D2F41646D696E697374726174657572">
+  <children xsi:type="editmodel:PackageEditModel" name="com.delegreg.rpgm.ui" location="105,570" size="388,663" id="com.delegreg.rpgm.ui">
+    <children xsi:type="editmodel:ClassEditModel" name="CampaignsView" location="13,34" size="145,139" runTimeClassModel="dispose(),setFocus(),CampaignsView(),iD,createPartControl(Lorg.eclipse.swt.widgets.Composite;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="28,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="iD"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="103,72">
+        <children xsi:type="editmodel:MethodEditModel" name="CampaignsView"/>
+        <children xsi:type="editmodel:MethodEditModel" name="createPartControl"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setFocus"/>
+        <children xsi:type="editmodel:MethodEditModel" name="dispose"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="RPGMAdapterFactory" location="160,266" size="178,103" id="com.delegreg.rpgm.ui/RPGMAdapterFactory" runTimeClassModel="getAdapterList(),RPGMAdapterFactory(),getAdapter(Ljava.lang.Object;Ljava.lang.Class;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="135,54">
+        <children xsi:type="editmodel:MethodEditModel" name="RPGMAdapterFactory" id="com.delegreg.rpgm.ui/RPGMAdapterFactory#RPGMAdapterFactory()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getAdapter" id="com.delegreg.rpgm.ui/RPGMAdapterFactory#getAdapter(Ljava.lang.Object;Ljava.lang.Class;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getAdapterList" id="com.delegreg.rpgm.ui/RPGMAdapterFactory#getAdapterList()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" name="IImageKeys" location="221,455" size="151,197" id="com.delegreg.rpgm.ui/IImageKeys" runTimeClassModel="dEFAULT,cAMPAIGN,eDITCAMPAIGN">
+      <children xsi:type="editmodel:CompartmentEditModel" size="128,144">
+        <children xsi:type="editmodel:AttributeEditModel" name="oNLINE"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="oFFLINE"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="dEFAULT" id="com.delegreg.rpgm.ui/IImageKeys#dEFAULT"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="aWAY"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="gROUP"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="dO_NOT_DISTURB"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="cAMPAIGN" id="com.delegreg.rpgm.ui/IImageKeys#cAMPAIGN"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="eDITCAMPAIGN" id="com.delegreg.rpgm.ui/IImageKeys#eDITCAMPAIGN"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" name="com.delegreg.rpgm" location="15,15" size="410,528" id="com.delegreg.rpgm">
+    <children xsi:type="editmodel:ClassEditModel" name="Perspective" location="115,440" size="140,67" id="com.delegreg.rpgm/Perspective" runTimeClassModel="createInitialLayout(Lorg.eclipse.ui.IPageLayout;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="117,18">
+        <children xsi:type="editmodel:MethodEditModel" name="createInitialLayout" id="com.delegreg.rpgm/Perspective#createInitialLayout(Lorg.eclipse.ui.IPageLayout;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="ApplicationWorkbenchWindowAdvisor" location="95,275" size="285,103" id="com.delegreg.rpgm/ApplicationWorkbenchWindowAdvisor" runTimeClassModel="preWindowOpen(),createActionBarAdvisor(Lorg.eclipse.ui.application.IActionBarConfigurer;),ApplicationWorkbenchWindowAdvisor(Lorg.eclipse.ui.application.IWorkbenchWindowConfigurer;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="216,54">
+        <children xsi:type="editmodel:MethodEditModel" name="ApplicationWorkbenchWindowAdvisor" id="com.delegreg.rpgm/ApplicationWorkbenchWindowAdvisor#ApplicationWorkbenchWindowAdvisor(Lorg.eclipse.ui.application.IWorkbenchWindowConfigurer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="createActionBarAdvisor" id="com.delegreg.rpgm/ApplicationWorkbenchWindowAdvisor#createActionBarAdvisor(Lorg.eclipse.ui.application.IActionBarConfigurer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="preWindowOpen" id="com.delegreg.rpgm/ApplicationWorkbenchWindowAdvisor#preWindowOpen()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="ApplicationWorkbenchAdvisor" location="158,146" size="233,103" id="com.delegreg.rpgm/ApplicationWorkbenchAdvisor" runTimeClassModel="createWorkbenchWindowAdvisor(Lorg.eclipse.ui.application.IWorkbenchWindowConfigurer;),initialize(Lorg.eclipse.ui.application.IWorkbenchConfigurer;),getInitialWindowPerspectiveId()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="194,54">
+        <children xsi:type="editmodel:MethodEditModel" name="createWorkbenchWindowAdvisor" id="com.delegreg.rpgm/ApplicationWorkbenchAdvisor#createWorkbenchWindowAdvisor(Lorg.eclipse.ui.application.IWorkbenchWindowConfigurer;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getInitialWindowPerspectiveId" id="com.delegreg.rpgm/ApplicationWorkbenchAdvisor#getInitialWindowPerspectiveId()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="initialize" id="com.delegreg.rpgm/ApplicationWorkbenchAdvisor#initialize(Lorg.eclipse.ui.application.IWorkbenchConfigurer;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="ApplicationActionBarAdvisor" location="171,39" size="223,67" id="com.delegreg.rpgm/ApplicationActionBarAdvisor" runTimeClassModel="ApplicationActionBarAdvisor(Lorg.eclipse.ui.application.IActionBarConfigurer;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="169,18">
+        <children xsi:type="editmodel:MethodEditModel" name="ApplicationActionBarAdvisor" id="com.delegreg.rpgm/ApplicationActionBarAdvisor#ApplicationActionBarAdvisor(Lorg.eclipse.ui.application.IActionBarConfigurer;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Application" location="13,35" size="127,103" id="com.delegreg.rpgm/Application" runTimeClassModel="stop(),pLUGIN_ID,start(Lorg.eclipse.equinox.app.IApplicationContext;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="104,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="pLUGIN_ID" id="com.delegreg.rpgm/Application#pLUGIN_ID"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="52,36">
+        <children xsi:type="editmodel:MethodEditModel" name="start" id="com.delegreg.rpgm/Application#start(Lorg.eclipse.equinox.app.IApplicationContext;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="stop" id="com.delegreg.rpgm/Application#stop()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" name="com.delegreg.rpgm.model" location="540,420" size="1155,817" id="com.delegreg.rpgm.model">
+    <children xsi:type="editmodel:ClassEditModel" name="Scenario" location="13,137" size="193,175" id="com.delegreg.rpgm.model/Scenario" runTimeClassModel="setDocRessource(Lcom.delegreg.rpgm.model.IDocRessource;),name,sequences,docRessource,Scenario(),encounters,getDocRessource()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="170,72">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Scenario#name"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="sequences" id="com.delegreg.rpgm.model/Sequence@sequences+com.delegreg.rpgm.model/Scenario@scenario|com.delegreg.rpgm.model/Sequence#sequences"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="docRessource" id="com.delegreg.rpgm.model/Scenario#docRessource"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="encounters" id="com.delegreg.rpgm.model/Scenario#encounters"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="117,54">
+        <children xsi:type="editmodel:MethodEditModel" name="Scenario" id="com.delegreg.rpgm.model/Scenario#Scenario()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getDocRessource" id="com.delegreg.rpgm.model/Scenario#getDocRessource()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setDocRessource" id="com.delegreg.rpgm.model/Scenario#setDocRessource(Lcom.delegreg.rpgm.model.IDocRessource;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Campaign" location="339,119" size="193,445" id="com.delegreg.rpgm.model/Campaign" runTimeClassModel="setSideQuests(Lcom.delegreg.rpgm.model.Scenarios;),setContainer(Lcom.delegreg.rpgm.model.Campaigns;),setDescription(Ljava.lang.String;),getSideQuests(),gameMaster,getDocRessource(),scenarios,getActors(),getDescription(),fireChanged(),setDocRessource(Lcom.delegreg.rpgm.model.IDocRessource;),setActors(Lcom.delegreg.rpgm.model.Groups;),Campaign(),locations,container,description,getXML(),name,sideQuests,docRessource,hashCode(),equals(Ljava.lang.Object;),actors,getContainer()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="170,126">
+        <children xsi:type="editmodel:AttributeEditModel" name="gameMaster" id="com.delegreg.rpgm.model/Campaign#gameMaster"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Campaign#name"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="description" id="com.delegreg.rpgm.model/Campaign#description"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="sideQuests" id="com.delegreg.rpgm.model/Campaign#sideQuests"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="docRessource" id="com.delegreg.rpgm.model/Campaign#docRessource"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="container" id="com.delegreg.rpgm.model/Campaign#container"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="actors" id="com.delegreg.rpgm.model/Campaign#actors"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="117,270">
+        <children xsi:type="editmodel:MethodEditModel" name="Campaign" id="com.delegreg.rpgm.model/Campaign#Campaign()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getSideQuests" id="com.delegreg.rpgm.model/Campaign#getSideQuests()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setSideQuests" id="com.delegreg.rpgm.model/Campaign#setSideQuests(Lcom.delegreg.rpgm.model.Scenarios;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setDescription" id="com.delegreg.rpgm.model/Campaign#setDescription(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="com.delegreg.rpgm.model/Campaign#getDescription()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getDocRessource" id="com.delegreg.rpgm.model/Campaign#getDocRessource()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setDocRessource" id="com.delegreg.rpgm.model/Campaign#setDocRessource(Lcom.delegreg.rpgm.model.IDocRessource;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setContainer" id="com.delegreg.rpgm.model/Campaign#setContainer(Lcom.delegreg.rpgm.model.Campaigns;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="hashCode" id="com.delegreg.rpgm.model/Campaign#hashCode()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getContainer" id="com.delegreg.rpgm.model/Campaign#getContainer()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="equals" id="com.delegreg.rpgm.model/Campaign#equals(Ljava.lang.Object;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getXML" id="com.delegreg.rpgm.model/Campaign#getXML()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="fireChanged" id="com.delegreg.rpgm.model/Campaign#fireChanged()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getActors" id="com.delegreg.rpgm.model/Campaign#getActors()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setActors" id="com.delegreg.rpgm.model/Campaign#setActors(Lcom.delegreg.rpgm.model.Groups;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.delegreg.rpgm.model/Campaign-Soyatec::Implement->com.delegreg.rpgm.core/INameable" source="//@children.2/@children.1" target="//@children.3/@children.0" targetEnd="//@children.2/@children.1/@sourceConnections.0/@children.2" label="//@children.2/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="59,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.delegreg.rpgm.model/Campaign-Soyatec::Import->com.delegreg.rpgm.model/Location" source="//@children.2/@children.1" target="//@children.2/@children.2" targetEnd="//@children.2/@children.1/@sourceConnections.1/@children.2" label="//@children.2/@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="1,0"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.delegreg.rpgm.model/Campaign->Soyatec::Import" source="//@children.2/@children.1" target="//@children.2/@children.3" targetEnd="//@children.2/@children.1/@sourceConnections.2/@children.2" label="//@children.2/@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import»" size="96,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="193,23" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="22,33"/>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.delegreg.rpgm.model/Location@locations+com.delegreg.rpgm.model/Campaign@campaign" source="//@children.2/@children.1" target="//@children.2/@children.2" targetEnd="//@children.2/@children.1/@sourceConnections.3/@children.2" label="//@children.2/@children.1/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="campaign" location="0,26" id="com.delegreg.rpgm.model/Location@locations+com.delegreg.rpgm.model/Campaign@campaign|com.delegreg.rpgm.model/Campaign#campaign" attachSource="true" multiplicityLabel="//@children.2/@children.1/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.2/@children.1/@sourceConnections.3/@children.1/@children.0" navigable="true">
+          <children xsi:type="editmodel:LabelEditModel" name=" + campaign" location="813,543" size="58,14" anchorKind="FirstPart"/>
+          <children xsi:type="editmodel:LabelEditModel" name="0..1" location="853,571" size="18,14" anchorKind="FirstPart"/>
+        </children>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="locations" location="22,0" id="com.delegreg.rpgm.model/Location@locations+com.delegreg.rpgm.model/Campaign@campaign|com.delegreg.rpgm.model/Location#locations" multiplicityLabel="//@children.2/@children.1/@sourceConnections.3/@children.2/@children.1" roleLabel="//@children.2/@children.1/@sourceConnections.3/@children.2/@children.0" navigable="true">
+          <children xsi:type="editmodel:LabelEditModel" name=" - locations" location="949,1019" size="53,14" anchorKind="LastPart"/>
+          <children xsi:type="editmodel:LabelEditModel" name="*" location="931,1019" size="4,14" anchorKind="LastPart"/>
+        </children>
+      </sourceConnections>
+      <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.delegreg.rpgm.model/Scenarios@scenarios+com.delegreg.rpgm.model/Campaign@campaign" source="//@children.2/@children.1" target="//@children.2/@children.3" targetEnd="//@children.2/@children.1/@sourceConnections.4/@children.2" label="//@children.2/@children.1/@sourceConnections.4/@children.0" sourceEnd="//@children.2/@children.1/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="campaign" location="193,43" id="com.delegreg.rpgm.model/Scenarios@scenarios+com.delegreg.rpgm.model/Campaign@campaign|com.delegreg.rpgm.model/Campaign#campaign" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="scenarios" location="22,56" id="com.delegreg.rpgm.model/Scenarios@scenarios+com.delegreg.rpgm.model/Campaign@campaign|com.delegreg.rpgm.model/Scenarios#scenarios" multiplicityLabel="//@children.2/@children.1/@sourceConnections.4/@children.2/@children.1" roleLabel="//@children.2/@children.1/@sourceConnections.4/@children.2/@children.0" navigable="true">
+          <children xsi:type="editmodel:LabelEditModel" name=" - scenarios" location="1163,593" size="58,14" anchorKind="LastPart"/>
+          <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1131,593" size="18,14" anchorKind="LastPart"/>
+        </children>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.1 //@children.2/@children.1/@sourceConnections.3 //@children.2/@children.2/@sourceConnections.0" name="Location" location="286,353" size="193,175" id="com.delegreg.rpgm.model/Location" runTimeClassModel="setDocRessource(Lcom.delegreg.rpgm.model.IDocRessource;),getName(),subLocations,setName(Ljava.lang.String;),name,docRessource,Location(),campaign,getDocRessource()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="170,36">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Location#name"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="docRessource" id="com.delegreg.rpgm.model/Location#docRessource"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="117,90">
+        <children xsi:type="editmodel:MethodEditModel" name="Location" id="com.delegreg.rpgm.model/Location#Location()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/Location#getName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/Location#setName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setDocRessource" id="com.delegreg.rpgm.model/Location#setDocRessource(Lcom.delegreg.rpgm.model.IDocRessource;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getDocRessource" id="com.delegreg.rpgm.model/Location#getDocRessource()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.delegreg.rpgm.model/Location@subLocations+com.delegreg.rpgm.model/Location@location2" source="//@children.2/@children.2" target="//@children.2/@children.2" targetEnd="//@children.2/@children.2/@sourceConnections.0/@children.2" label="//@children.2/@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="subLocations" location="0,15" id="com.delegreg.rpgm.model/Location@subLocations+com.delegreg.rpgm.model/Location@location2|com.delegreg.rpgm.model/Location#subLocations" anchorKind="FixedAtEdge" attachSource="true" multiplicityLabel="//@children.2/@children.2/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.2/@children.2/@sourceConnections.0/@children.1/@children.0" navigable="true">
+          <children xsi:type="editmodel:LabelEditModel" name=" - subLocations" location="838,1063" size="75,14" anchorKind="FirstPart"/>
+          <children xsi:type="editmodel:LabelEditModel" name="*" location="909,1035" size="4,14" anchorKind="FirstPart"/>
+        </children>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="location2" location="18,0" id="com.delegreg.rpgm.model/Location@subLocations+com.delegreg.rpgm.model/Location@location2|com.delegreg.rpgm.model/Location#location2" anchorKind="FixedAtEdge"/>
+      </sourceConnections>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.2 //@children.2/@children.1/@sourceConnections.4" name="Scenarios" location="594,109" size="105,57" id="com.delegreg.rpgm.model/Scenarios" runTimeClassModel="name">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Scenarios#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" name="IDocRessource" location="372,507" size="135,43" id="com.delegreg.rpgm.model/IDocRessource" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="PDFDocRessource" location="502,576" size="157,175" id="com.delegreg.rpgm.model/PDFDocRessource" runTimeClassModel="PDFDocRessource(),pdfDocument,setPageNumber(I),setPdfDocument(Ljava.lang.String;),pageNumber,getPageNumber(),getPdfDocument()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="117,36">
+        <children xsi:type="editmodel:AttributeEditModel" name="pageNumber" id="com.delegreg.rpgm.model/PDFDocRessource#pageNumber"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="pdfDocument" id="com.delegreg.rpgm.model/PDFDocRessource#pdfDocument"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="121,90">
+        <children xsi:type="editmodel:MethodEditModel" name="PDFDocRessource" id="com.delegreg.rpgm.model/PDFDocRessource#PDFDocRessource()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getPageNumber" id="com.delegreg.rpgm.model/PDFDocRessource#getPageNumber()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getPdfDocument" id="com.delegreg.rpgm.model/PDFDocRessource#getPdfDocument()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setPageNumber" id="com.delegreg.rpgm.model/PDFDocRessource#setPageNumber(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setPdfDocument" id="com.delegreg.rpgm.model/PDFDocRessource#setPdfDocument(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="HttpDocRessource" location="218,583" size="156,121" id="com.delegreg.rpgm.model/HttpDocRessource" runTimeClassModel="setUrl(Ljava.lang.String;),HttpDocRessource(),getUrl(),url">
+      <children xsi:type="editmodel:CompartmentEditModel" size="65,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="url" id="com.delegreg.rpgm.model/HttpDocRessource#url"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="121,54">
+        <children xsi:type="editmodel:MethodEditModel" name="HttpDocRessource" id="com.delegreg.rpgm.model/HttpDocRessource#HttpDocRessource()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setUrl" id="com.delegreg.rpgm.model/HttpDocRessource#setUrl(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getUrl" id="com.delegreg.rpgm.model/HttpDocRessource#getUrl()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:InterfaceEditModel" name="IDocument" location="552,172" size="110,43" id="com.delegreg.rpgm.model/IDocument" runTimeClassModel="">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="PDFDocument" location="520,175" size="132,175" id="com.delegreg.rpgm.model/PDFDocument" runTimeClassModel="getName(),setName(Ljava.lang.String;),name,equals(Ljava.lang.Object;),hashCode(),PDFDocument(),PDFDocument(Ljava.lang.String;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/PDFDocument#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="97,108">
+        <children xsi:type="editmodel:MethodEditModel" name="PDFDocument" id="com.delegreg.rpgm.model/PDFDocument#PDFDocument()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/PDFDocument#getName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="equals" id="com.delegreg.rpgm.model/PDFDocument#equals(Ljava.lang.Object;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="hashCode" id="com.delegreg.rpgm.model/PDFDocument#hashCode()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/PDFDocument#setName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="PDFDocument" id="com.delegreg.rpgm.model/PDFDocument#PDFDocument(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="HttpDocument" location="519,171" size="131,121" id="com.delegreg.rpgm.model/HttpDocument" runTimeClassModel="getName(),setName(Ljava.lang.String;),name,HttpDocument()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/HttpDocument#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="97,54">
+        <children xsi:type="editmodel:MethodEditModel" name="HttpDocument" id="com.delegreg.rpgm.model/HttpDocument#HttpDocument()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/HttpDocument#setName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/HttpDocument#getName()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Library" location="101,387" size="102,121" id="com.delegreg.rpgm.model/Library" runTimeClassModel="Library(Ljava.lang.String;),Library(I),name,Library(),Library(Ljava.util.Collection;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Library#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="64,54">
+        <children xsi:type="editmodel:MethodEditModel" name="Library" id="com.delegreg.rpgm.model/Library#Library()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Library" id="com.delegreg.rpgm.model/Library#Library(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Library" id="com.delegreg.rpgm.model/Library#Library(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Libraries" location="522,170" size="98,139" id="com.delegreg.rpgm.model/Libraries" runTimeClassModel="getName(),setName(Ljava.lang.String;),Libraries(),Libraries(I),Libraries(Ljava.util.Collection;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <children xsi:type="editmodel:CompartmentEditModel" size="72,90">
+        <children xsi:type="editmodel:MethodEditModel" name="Libraries" id="com.delegreg.rpgm.model/Libraries#Libraries(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Libraries" id="com.delegreg.rpgm.model/Libraries#Libraries()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Libraries" id="com.delegreg.rpgm.model/Libraries#Libraries(Ljava.util.Collection;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/Libraries#getName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/Libraries#setName(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Group" location="407,179" size="138,193" id="com.delegreg.rpgm.model/Group" runTimeClassModel="getName(),setSubGroups(Lcom.delegreg.rpgm.model.Groups;),setName(Ljava.lang.String;),getSubGroups(),Group(Ljava.lang.String;),name,Group(),subGroups">
+      <children xsi:type="editmodel:CompartmentEditModel" size="115,36">
+        <children xsi:type="editmodel:AttributeEditModel" name="subGroups" id="com.delegreg.rpgm.model/Group#subGroups"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Group#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="100,108">
+        <children xsi:type="editmodel:MethodEditModel" name="Group" id="com.delegreg.rpgm.model/Group#Group()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/Group#getName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getSubGroups" id="com.delegreg.rpgm.model/Group#getSubGroups()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/Group#setName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setSubGroups" id="com.delegreg.rpgm.model/Group#setSubGroups(Lcom.delegreg.rpgm.model.Groups;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Group" id="com.delegreg.rpgm.model/Group#Group(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Actor" location="407,180" size="102,139" id="com.delegreg.rpgm.model/Actor" runTimeClassModel="getName(),setName(Ljava.lang.String;),Actor(Ljava.lang.String;),name,Actor()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Actor#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="72,72">
+        <children xsi:type="editmodel:MethodEditModel" name="Actor" id="com.delegreg.rpgm.model/Actor#Actor()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/Actor#getName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/Actor#setName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Actor" id="com.delegreg.rpgm.model/Actor#Actor(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Groups" location="581,180" size="102,175" id="com.delegreg.rpgm.model/Groups" runTimeClassModel="getName(),Groups(Ljava.util.Collection;),setName(Ljava.lang.String;),name,Groups(I),Groups(Ljava.lang.String;),Groups()">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Groups#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="72,108">
+        <children xsi:type="editmodel:MethodEditModel" name="Groups" id="com.delegreg.rpgm.model/Groups#Groups(Ljava.util.Collection;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Groups" id="com.delegreg.rpgm.model/Groups#Groups()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Groups" id="com.delegreg.rpgm.model/Groups#Groups(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Groups" id="com.delegreg.rpgm.model/Groups#Groups(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/Groups#setName(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/Groups#getName()"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <children xsi:type="editmodel:ClassEditModel" name="Sequences" location="667,175" size="112,157" id="com.delegreg.rpgm.model/Sequences" runTimeClassModel="getName(),Sequences(Ljava.util.Collection;),Sequences(),setName(Ljava.lang.String;),name,Sequences(I),Sequences(Ljava.lang.String;)">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.model/Sequences#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="85,90">
+        <children xsi:type="editmodel:MethodEditModel" name="Sequences" id="com.delegreg.rpgm.model/Sequences#Sequences(I)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Sequences" id="com.delegreg.rpgm.model/Sequences#Sequences()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="Sequences" id="com.delegreg.rpgm.model/Sequences#Sequences(Ljava.lang.String;)"/>
+        <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.delegreg.rpgm.model/Sequences#getName()"/>
+        <children xsi:type="editmodel:MethodEditModel" name="setName" id="com.delegreg.rpgm.model/Sequences#setName(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.delegreg.rpgm.model->Soyatec::Implement" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Derive, Implement»" size="96,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="1150,422" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,68"/>
+    </sourceConnections>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" targetConnections="//@children.2/@sourceConnections.0" name="com.delegreg.rpgm.core" location="1416,787" size="135,136" id="com.delegreg.rpgm.core">
+    <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.2/@children.1/@sourceConnections.0" name="INameable" location="-578,44" size="111,71" id="com.delegreg.rpgm.core/INameable" runTimeClassModel="name">
+      <children xsi:type="editmodel:CompartmentEditModel" size="79,18">
+        <children xsi:type="editmodel:AttributeEditModel" name="name" id="com.delegreg.rpgm.core/INameable#name"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel"/>
+      <children xsi:type="editmodel:CompartmentEditModel"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=2;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://www.delegreg.com/rpgm/update">
+      RPGM&apos;s update site
+   </description>
+   <feature url="features/com.delegreg.rpgm.feature_0.1.0.200909181918.jar" id="com.delegreg.rpgm.feature" version="0.1.0.200909181918" os="macosx,win32" ws="carbon,win32" arch="x86">
+      <category name="RPGM"/>
+   </feature>
+   <feature url="features/com.delegreg.rpgm.games.d20.feature_0.1.0.200909181918.jar" id="com.delegreg.rpgm.games.d20.feature" version="0.1.0.200909181918">
+      <category name="RPGM"/>
+   </feature>
+   <feature url="features/com.delegreg.rpgm.games.basic.feature_0.1.0.200909181918.jar" id="com.delegreg.rpgm.games.basic.feature" version="0.1.0.200909181918">
+      <category name="RPGM"/>
+   </feature>
+   <category-def name="RPGM" label="RolePlaying GameMaster">
+      <description>
+         features for the RPGM application
+      </description>
+   </category-def>
+</site>
