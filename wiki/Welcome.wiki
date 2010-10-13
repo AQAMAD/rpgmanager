@@ -1,0 +1,18 @@
+#summary Welcome to the RPGM homepage.
+
+= Introduction =
+
+Welcome to RPGM !
+
+This project is currently under development and will need extensive documentation, though at the time I am working on getting up to date with the old website.
+
+Note that as of October 13th 2010 RPGM is now officially open-source and welcomes contributors of all kind.
+
+
+= Details =
+
+Things to do before anouncing version 1.0
+  * Finish *WIKI* documentation and screenshots _and_ videos
+  * Wrap up technical details needed to simplify the current API
+  * Finish the new features before release (persistance layer, workspace management)
+  * Work on game specific plugins 
