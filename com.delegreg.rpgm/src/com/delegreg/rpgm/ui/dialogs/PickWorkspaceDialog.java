@@ -26,6 +26,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.graphics.Point;
 
 /**
  * Dialog that lets/forces a user to enter/select a workspace that will be used when saving all configuration files and
@@ -82,6 +83,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
 
     @Override
     protected void configureShell(Shell newShell) {
+    	newShell.setMinimumSize(new Point(110, 28));
         super.configureShell(newShell);
         if (_switchWorkspace) {
             newShell.setText("Switch Workspace");
@@ -114,18 +116,20 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
         setMessage(_StrMsg);
 
         try {
-            Composite inner = new Composite(parent, SWT.NONE);
-            inner.setLayout(new GridLayout());
-            inner.setLayoutData(new GridData(GridData.FILL_VERTICAL | GridData.VERTICAL_ALIGN_END | GridData.GRAB_HORIZONTAL));
+            Composite outer = new Composite(parent, SWT.NONE);
+            outer.setLayout(null);
+            Composite inner = new Composite(outer, SWT.NONE);
+            inner.setBounds(5, 5, 430, 145);
+            inner.setLayout(null);
 
             // label on left
             CLabel label = new CLabel(inner, SWT.NONE);
+            label.setBounds(5, 5, 119, 21);
             label.setText("Workspace Root Path");
-            label.setLayoutData(new GridData());
 
             // combo in middle
             _workspacePathCombo = new Combo(inner, SWT.BORDER);
-            _workspacePathCombo.setLayoutData(new GridData());
+            _workspacePathCombo.setBounds(5, 31, 336, 23);
             String wsRoot = _preferences.get(_KeyWorkspaceRootDir, "");
             if (wsRoot == null || wsRoot.length() == 0) {
                 wsRoot = getWorkspacePathSuggestion();
@@ -134,8 +138,8 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
 
             // checkbox below
             _RememberWorkspaceButton = new Button(inner, SWT.CHECK);
+            _RememberWorkspaceButton.setBounds(5, 59, 138, 16);
             _RememberWorkspaceButton.setText("Remember workspace");
-            _RememberWorkspaceButton.setLayoutData(new GridData());
             _RememberWorkspaceButton.setSelection(_preferences.getBoolean(_KeyRememberWorkspace, false));
 
             String lastUsed = _preferences.get(_KeyLastUsedWorkspaces, "");
@@ -150,8 +154,8 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
 
             // browse button on right
             Button browse = new Button(inner, SWT.PUSH);
+            browse.setBounds(347, 29, 59, 25);
             browse.setText("Browse...");
-            browse.setLayoutData(new GridData());
             browse.addListener(SWT.Selection, new Listener() {
 
                 @Override
