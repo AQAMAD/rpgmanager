@@ -8,6 +8,15 @@ This project is currently under development and will need extensive documentatio
 
 Note that as of October 13th 2010 RPGM is now officially open-source and welcomes contributors of all kind.
 
+= What Next =
+
+Well, you might want to have a look at the [http://code.google.com/p/rpgmanager/downloads/list Downloads] section to grab the latest stable RPGM version.
+
+If you have trouble running RPGM, have a look at the [Install] page where you will find a detailed tutorial on how to download and install RPGM on your system.
+
+If you successfully started RPGM and still don't know what you're doing, check the [Tutorials] page.
+
+If you would like to help the RPGM crew, see the [Contributing] page.
 
 = Details =
 
