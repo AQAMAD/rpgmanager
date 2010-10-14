@@ -3,7 +3,6 @@ package com.delegreg.rpgm.ui.actions;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
@@ -11,7 +10,6 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import com.delegreg.rpgm.Application;
-import com.delegreg.rpgm.Messages;
 import com.delegreg.rpgm.ui.IImageKeys;
 import com.delegreg.rpgm.ui.dialogs.PickWorkspaceDialog;
 
