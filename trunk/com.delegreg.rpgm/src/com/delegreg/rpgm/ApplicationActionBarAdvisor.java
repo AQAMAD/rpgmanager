@@ -111,7 +111,7 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	    //openCampaignAction = new SaveCampaignAction(window);
 	    //register(saveCampaignAction);
 	    switchWorkspaceAction= new SwitchWorkspaceAction(window);
-	    register(editAction);
+	    register(switchWorkspaceAction);
 	    
     }
 

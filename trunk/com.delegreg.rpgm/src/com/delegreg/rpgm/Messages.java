@@ -8,12 +8,10 @@ public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "com.delegreg.rpgm.messages"; //$NON-NLS-1$
 	public static String ApplicationActionBarAdvisor_HelpMenuName;
 	public static String ApplicationActionBarAdvisor_RPGMMenuName;
-	public static String Campaign_Actors;
-	public static String Campaign_Scenarios;
-	public static String Campaign_SideQuests;
 	public static String CampaignEditor_CampaignNameLabel;
 	public static String CampaignEditor_GameMasterLabel;
 	public static String CampaignEditor_Title;
+	public static String Campaigns_Filename;
 	public static String CampaignsView_Importing;
 	public static String CampaignsView_ProgressImporting;
 	public static String ClearAllAction_Cancel;
@@ -94,7 +92,6 @@ public class Messages extends NLS {
 	public static String RenameItemAction_Name;
 	public static String RenameItemAction_Tooltip;
 	public static String RPGMAdapterFactory_CampaignsName;
-	public static String RPGMAdapterFactory_LibrariesName;
 	public static String RPGMAdapterFactory_LocationsName;
 	public static String SaveAsAction_Cancel;
 	public static String SaveAsAction_ErrorMessage;
@@ -106,8 +103,6 @@ public class Messages extends NLS {
 	public static String SaveAsAction_ToolTip;
 	public static String SaveAction_Name;
 	public static String SaveAction_ToolTip;
-	public static String Scenario_Actors;
-	public static String Scenario_Sequences;
 	public static String ScenarioEditor_ScenarioNameLabel;
 	public static String ScenarioEditor_Title;
 	public static String SelectItemTypeWizardPage_Actor;
@@ -132,6 +127,10 @@ public class Messages extends NLS {
 	public static String SolidifyAction_ErrorTitle;
 	public static String SolidifyAction_Name;
 	public static String SolidifyAction_Tooltip;
+	public static String SwitchWorkspaceAction_Text;
+	public static String SwitchWorkspaceAction_Tooltip;
+	public static String SwitchWorkspaceAction_WarningMessage;
+	public static String SwitchWorkspaceAction_WarningTitle;
 	public static String Widget_SelectDocRessource;
 	public static String Widget_SelectDocRessourceMessage;
 	public static String Widget_Empty;
@@ -190,6 +189,8 @@ public class Messages extends NLS {
 	public static String ImportItemAction_Name;
 	public static String ImportItemAction_Tooltip;
 	public static String Widget_DocumentRessourceTooltip;
+	public static String Workspace_CannotRunWithout;
+	public static String Workspace_Error;
 	public static String ActorEditorStatsPage_Title;
 	public static String ActorEditorMainPage_Title;
 	public static String NewItemDetailsWizardPage_PDFFiles;
@@ -200,6 +201,11 @@ public class Messages extends NLS {
 	public static String NewItemDetailsWizardPage_ImageFiles;
 	public static String NewItemDetailsWizardPage_AudioFileName;
 	public static String DefaultStatBlock;
+	public static String UnsavedChanges_Cancel;
+	public static String UnsavedChanges_Ignore;
+	public static String UnsavedChanges_Message;
+	public static String UnsavedChanges_Save;
+	public static String UnsavedChanges_Title;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

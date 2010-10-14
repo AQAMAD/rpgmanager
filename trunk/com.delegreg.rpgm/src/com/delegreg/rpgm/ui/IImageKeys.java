@@ -19,7 +19,7 @@ public interface IImageKeys {
 	public static final String WORKSPACE = "icons/special/Workspace.png"; //$NON-NLS-1$
 	//big display items
 	public static final String BIGITEM = "icons/branding/Folder-Developer-48x48.png"; //$NON-NLS-1$
-	public static final String BIGWORKSPACE = "icons/branding/Workspace-48x48.png"; //$NON-NLS-1$
+	public static final String BIGWORKSPACE = "icons/branding/workspace-48x48.png"; //$NON-NLS-1$
 	//display items
 	//folders
 	public static final String SCENARIOS = "icons/folders/Scenarios.png"; //$NON-NLS-1$

@@ -168,44 +168,58 @@
             name="New Item">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Delete the selected item"
             id="com.delegreg.rpgm.deleteItem"
             name="Delete Item">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Save As New File"
             id="com.delegreg.rpgm.saveAs"
             name="Save As">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Rename the selected item"
             id="com.delegreg.rpgm.renameItem"
             name="Rename Item">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Save the current file"
             id="com.delegreg.rpgm.save"
             name="Save">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Import fragment file"
             id="com.delegreg.rpgm.importItem"
             name="Import">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Export fragment file"
             id="com.delegreg.rpgm.exportItem"
             name="Export">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Make ressources solid"
             id="com.delegreg.rpgm.solidify"
             name="Solidify">
       </command>
       <command
+            categoryId="com.delegreg.rpgm.commands"
             description="Clear workspace"
             id="com.delegreg.rpgm.clearAll"
             name="Clear">
+      </command>
+      <command
+            categoryId="com.delegreg.rpgm.commands"
+            description="Switch workspace"
+            id="com.delegreg.rpgm.switchWorkspace"
+            name="Switch">
       </command>
    </extension>
    <extension

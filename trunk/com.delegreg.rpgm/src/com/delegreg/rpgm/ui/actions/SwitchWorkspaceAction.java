@@ -10,6 +10,7 @@ import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import com.delegreg.rpgm.Application;
+import com.delegreg.rpgm.Messages;
 import com.delegreg.rpgm.ui.IImageKeys;
 import com.delegreg.rpgm.ui.dialogs.PickWorkspaceDialog;
 
@@ -21,8 +22,8 @@ public class SwitchWorkspaceAction extends Action  implements IWorkbenchAction{
 		this.window = window;
 		setId(ID);
 		setActionDefinitionId(ID);
-		setText("Switch Workspace");
-		setToolTipText("Change your actual work location");
+		setText(Messages.SwitchWorkspaceAction_Text);
+		setToolTipText(Messages.SwitchWorkspaceAction_Tooltip);
 		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(Application.PLUGIN_ID, IImageKeys.WORKSPACE));
 	} 
 	@Override 
@@ -31,7 +32,7 @@ public class SwitchWorkspaceAction extends Action  implements IWorkbenchAction{
 		int pick = pwd.open(); 
 		if (pick == Dialog.CANCEL) 
 			return; 
-		MessageDialog.openInformation(Display.getDefault().getActiveShell(), "Switch Workspace", "The client will now restart with the new workspace"); 
+		MessageDialog.openInformation(Display.getDefault().getActiveShell(), Messages.SwitchWorkspaceAction_WarningTitle, Messages.SwitchWorkspaceAction_WarningMessage); 
 		// restart client 
 		PlatformUI.getWorkbench().restart(); 
 	}

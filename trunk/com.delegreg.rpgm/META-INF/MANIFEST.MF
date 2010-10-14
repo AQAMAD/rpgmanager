@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Rpgm Plug-in
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: com.delegreg.rpgm; singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-Vendor: www.delegreg.com
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui,

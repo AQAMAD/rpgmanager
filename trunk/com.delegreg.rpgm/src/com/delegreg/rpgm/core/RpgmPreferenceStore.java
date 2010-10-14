@@ -10,8 +10,11 @@ public class RpgmPreferenceStore {
 	public static final String LOAD_LAST_SAVED_CAMPAIGNS = "load_last_saved_campaigns"; //$NON-NLS-1$
 	public static final String LAST_SAVED_CAMPAIGNS = "last_saved_campaigns"; //$NON-NLS-1$
 	public static final String HIRES_PDF = "use_hires_pdf"; //$NON-NLS-1$
-	public static final String SAVE_CAMPAIGNS_DIRECTORY = "save_campaigns_directory";
-	
+	public static final String SAVE_CAMPAIGNS_DIRECTORY = "save_campaigns_directory"; //$NON-NLS-1$
+	public static final String WORKSPACE_ROOT_DIRECTORY = "workspace_root_dir"; //$NON-NLS-1$
+	public static final String REMEMBER_WORKSPACE = "remember_workspace"; //$NON-NLS-1$
+	public static final String LAST_USED_WORKSPACE = "last_used_workspace"; //$NON-NLS-1$
+
 	public static final String NODE_GENERAL = "General"; //$NON-NLS-1$
 	
 	private final static PreferenceStore ps = new PreferenceStore("rpgm.properties"); //$NON-NLS-1$
@@ -25,6 +28,9 @@ public class RpgmPreferenceStore {
 		ps.setDefault(SAVE_CAMPAIGNS_DIRECTORY,true); //$NON-NLS-1$
 		ps.setDefault(HIRES_PDF, 100);
 		ps.setDefault(LAST_SAVED_CAMPAIGNS, ""); //$NON-NLS-1$
+		ps.setDefault(REMEMBER_WORKSPACE, false); //$NON-NLS-1$
+		ps.setDefault(LAST_USED_WORKSPACE, ""); //$NON-NLS-1$
+		ps.setDefault(WORKSPACE_ROOT_DIRECTORY, ""); //$NON-NLS-1$
 	}
 	
 	public static PreferenceStore getInstance() {

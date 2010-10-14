@@ -94,8 +94,8 @@ public class Application implements IApplication {
 			            // if the user cancelled, we can't do anything as we need a workspace, so in this case, we tell them and exit 
 			            if (pick == Window.CANCEL) { 
 			            if (pwd.getSelectedWorkspaceLocation()  == null) { 
-			                MessageDialog.openError(display.getActiveShell(), "Error", 
-			                    "The application can not start without a workspace root and will now exit."); 
+			                MessageDialog.openError(display.getActiveShell(), Messages.Workspace_Error, 
+			                    Messages.Workspace_CannotRunWithout); 
 			                try { 
 			                PlatformUI.getWorkbench().close(); 
 			                } catch (Exception err) { 
@@ -106,12 +106,12 @@ public class Application implements IApplication {
 			            } 
 			            else { 
 			            // tell Eclipse what the selected location was and continue 
-			            instanceLoc.set(new URL("file", null, pwd.getSelectedWorkspaceLocation()), false); 
+			            instanceLoc.set(new URL("file", null, pwd.getSelectedWorkspaceLocation()), false);  //$NON-NLS-1$
 			            } 
 			        } 
 			        else { 
 			            // set the last used location and continue 
-			            instanceLoc.set(new URL("file", null, lastUsedWs), false); 
+			            instanceLoc.set(new URL("file", null, lastUsedWs), false);  //$NON-NLS-1$
 			        }     			
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());
 
@@ -193,12 +193,12 @@ public class Application implements IApplication {
 	public static String getTitle(){
 		String title = Platform.getProduct().getName();
 		if (currentFileName!=null){
-			title = title + " - " + currentFileName;
+			title = title + " - " + currentFileName; //$NON-NLS-1$
 		}else{
-			title = title + " - " + "New Campaigns File.rpgm";
+			title = title + " - " + Messages.Campaigns_Filename; //$NON-NLS-1$
 		}
 		if (dirty){
-			title=title + "*";
+			title=title + "*"; //$NON-NLS-1$
 		}
 		return title;
 	}

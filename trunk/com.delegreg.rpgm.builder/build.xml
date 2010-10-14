@@ -77,6 +77,19 @@
 			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>		
 	</target>
 	
+	<target name="night">
+		<tstamp prefix="build"/>
+		<move todir="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}">
+			<fileset refid="results" />
+		</move>
+		<move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
+			tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
+		<move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
+			tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>		
+		<move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
+			tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>		
+	</target>
+
 	<target name="ftp">
 		<ftp password="jester" server="delegreg.com" userid="toto" 
 			remotedir="/web/rpgm/" action="send"
@@ -87,4 +100,5 @@
 	
 	<!--This target defines the run-order of the targets-->
 	<target name="build" depends="clean, init, pde-build, deploy" />
+	<target name="nightly" depends="clean, init, pde-build, night" />
 </project>
