@@ -1,10 +1,7 @@
 <project name="com.delegreg.rpgm" default="build">
 	<!--sets the path of the properties file-->
 	<property file="build.properties" />
-	<property name="pdeBuildPluginVersion" value="3.5.0.v20090527-1800" />
-	<property name="equinoxLauncherPluginVersion" value="1.0.200.v20090520" />
-	<property name="eclipseLocation" value="c:/eclipse3.5/eclipse" />
-	<property name="workspacelocation" value="c:/workspace3.5/" />
+	<property name="workspacelocation" value="${basedir}../" />
 	<property name="builderlocation" value="${workspacelocation}com.delegreg.rpgm.builder" />
 
 	<target name="clean">
@@ -41,16 +38,25 @@
 		Eclipse antRunner application.
 	-->
 	<target name="pde-build">
-		<java classname="org.eclipse.equinox.launcher.Main" fork="true" failonerror="true">
-			<arg value="-application" />
-			<arg value="org.eclipse.ant.core.antRunner" />
-			<arg value="-buildfile" />
-			<arg value="${eclipseLocation}/plugins/org.eclipse.pde.build_${pdeBuildPluginVersion}/scripts/productBuild/productBuild.xml" />
-			<arg value="-Dtimestamp=${timestamp}" />
-			<classpath>
-				<pathelement location="${baseLocation}/plugins/org.eclipse.equinox.launcher_${equinoxLauncherPluginVersion}.jar" />
-			</classpath>
-		</java>
+		
+		<property name="baseLocation" value="${eclipse.home}"/>
+		<!-- by default, check for deltapack co-located with eclipse -->
+		<property name="deltapack" value="C:\target3.5\eclipse"/>
+
+		<!-- Check that we have a deltapack -->
+		<available property="haveDeltaPack" file="${deltapack}"/>
+		<fail unless="haveDeltaPack" message="The deltapack is required to build this product.  Please edit buildProduct.xml or set the &quot;deltapack&quot; property." />
+
+		<property name="builder" value="${basedir}" />
+		<property name="buildDirectory" value="${basedir}/buildDirectory"/>
+		<property name="pluginPath" value="${basedir}/..${path.separator}${deltapack}" />
+		<property name="buildTempFolder" value="${buildDirectory}" />
+
+		<ant antfile="${eclipse.pdebuild.scripts}/productBuild/productBuild.xml" />
+
+		<!-- refresh the workspace -->
+		<eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
+		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
 	</target>
 
 	<fileset id="results" dir="${buildDirectory}/${buildLabel}">
