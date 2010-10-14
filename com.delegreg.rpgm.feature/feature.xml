@@ -550,4 +550,25 @@ litigation.
          install-size="0"
          version="0.0.0"/>
 
+   <plugin
+         id="com.delegreg.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.delegreg.library.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.delegreg.rpgm.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
