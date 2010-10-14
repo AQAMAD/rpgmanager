@@ -19,7 +19,7 @@ public class DefaultStatBlock extends BaseContaineableNameable implements IStatB
 	private String background;
 	static Image icon=AbstractUIPlugin.imageDescriptorFromPlugin(Application.PLUGIN_ID, IImageKeys.STATBLOCK).createImage();;
 	
-	static String STABLOCK_NLSKEY="DefaultStatBlock";
+	static String STABLOCK_NLSKEY="DefaultStatBlock"; //$NON-NLS-1$
 
 	public DefaultStatBlock(String name) {
 		this();
@@ -70,13 +70,11 @@ public class DefaultStatBlock extends BaseContaineableNameable implements IStatB
 
 	@Override
 	public Image ClassIcon() {
-		// TODO Auto-generated method stub
 		return icon;
 	}
 
 	@Override
 	public String ClassName() {
-		// TODO Auto-generated method stub
 		return Messages.getByName(STABLOCK_NLSKEY);
 	}
 	

@@ -12,6 +12,7 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
+import org.eclipse.jface.preference.PreferenceStore;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.graphics.Image;
@@ -28,6 +29,9 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.graphics.Point;
 
+import com.delegreg.rpgm.Messages;
+import com.delegreg.rpgm.core.RpgmPreferenceStore;
+
 /**
  * Dialog that lets/forces a user to enter/select a workspace that will be used when saving all configuration files and
  * settings. This dialog is shown at startup of the GUI just after the splash screen has shown.
@@ -37,15 +41,10 @@ import org.eclipse.swt.graphics.Point;
 public class PickWorkspaceDialog extends TitleAreaDialog {
 
     // the name of the file that tells us that the workspace directory belongs to our application
-    public static final String  WS_IDENTIFIER          = ".our_rcp_workspace";
+    public static final String  WS_IDENTIFIER          = ".rpgm_workspace";
 
-    // you would probably normally define these somewhere in your Preference Constants
-    private static final String _KeyWorkspaceRootDir   = "wsRootDir";
-    private static final String _KeyRememberWorkspace  = "wsRemember";
-    private static final String _KeyLastUsedWorkspaces = "wsLastUsedWorkspaces";
-
-    // this are our preferences we will be using as the IPreferenceStore is not available yet
-    private static Preferences  _preferences           = Preferences.userNodeForPackage(PickWorkspaceDialog.class);
+    // this are our preferences 
+    private static PreferenceStore  _preferences           = RpgmPreferenceStore.getInstance();
 
     // various dialog messages
     private static final String _StrMsg                = "Your workspace is where settings and various important files will be stored.";
@@ -98,7 +97,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
      * @return
      */
     public static boolean isRememberWorkspace() {
-        return _preferences.getBoolean(_KeyRememberWorkspace, false);
+        return _preferences.getBoolean(RpgmPreferenceStore.REMEMBER_WORKSPACE);
     }
     
     /**
@@ -107,7 +106,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
      * @return null if none
      */
     public static String getLastSetWorkspaceDirectory() {
-        return _preferences.get(_KeyWorkspaceRootDir, null);
+        return _preferences.getString(RpgmPreferenceStore.LAST_USED_WORKSPACE);
     }
 
     @Override
@@ -130,7 +129,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
             // combo in middle
             _workspacePathCombo = new Combo(inner, SWT.BORDER);
             _workspacePathCombo.setBounds(5, 31, 336, 23);
-            String wsRoot = _preferences.get(_KeyWorkspaceRootDir, "");
+            String wsRoot = _preferences.getString(RpgmPreferenceStore.WORKSPACE_ROOT_DIRECTORY);
             if (wsRoot == null || wsRoot.length() == 0) {
                 wsRoot = getWorkspacePathSuggestion();
             }
@@ -140,9 +139,9 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
             _RememberWorkspaceButton = new Button(inner, SWT.CHECK);
             _RememberWorkspaceButton.setBounds(5, 59, 138, 16);
             _RememberWorkspaceButton.setText("Remember workspace");
-            _RememberWorkspaceButton.setSelection(_preferences.getBoolean(_KeyRememberWorkspace, false));
+            _RememberWorkspaceButton.setSelection(_preferences.getBoolean(RpgmPreferenceStore.REMEMBER_WORKSPACE));
 
-            String lastUsed = _preferences.get(_KeyLastUsedWorkspaces, "");
+            String lastUsed = _preferences.getString(RpgmPreferenceStore.LAST_USED_WORKSPACE);
             _lastUsedWorkspaces = new ArrayList<String>();
             if (lastUsed != null) {
                 String[] all = lastUsed.split(_SplitChar);
@@ -202,8 +201,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
 
         buf.append(uHome);
         buf.append(File.separator);
-        buf.append("My App Name");
-        buf.append("_Workspace");
+        buf.append("New RPGM Workspace");
 
         return buf.toString();
     }
@@ -402,8 +400,8 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
         }
 
         // save them onto our preferences
-        _preferences.putBoolean(_KeyRememberWorkspace, _RememberWorkspaceButton.getSelection());
-        _preferences.put(_KeyLastUsedWorkspaces, buf.toString());
+        _preferences.setValue(RpgmPreferenceStore.REMEMBER_WORKSPACE, _RememberWorkspaceButton.getSelection());
+        _preferences.setValue(RpgmPreferenceStore.LAST_USED_WORKSPACE, buf.toString());
 
         // now create it 
         boolean ok = checkAndCreateWorkspaceRoot(str);
@@ -416,8 +414,14 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
         _selectedWorkspaceRootLocation = str;
 
         // and on our preferences as well
-        _preferences.put(_KeyWorkspaceRootDir, str);
-
+        _preferences.setValue(RpgmPreferenceStore.WORKSPACE_ROOT_DIRECTORY,str);
+        try {
+			_preferences.save();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         super.okPressed();
     }
 

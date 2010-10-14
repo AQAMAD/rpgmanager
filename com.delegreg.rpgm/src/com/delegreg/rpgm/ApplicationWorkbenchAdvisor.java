@@ -74,7 +74,7 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 				  public void run() {
 						MessageDialog.openError(new Shell(), Messages.File_LoadErrorTitle, Messages.File_LoadErrorMessage);
 						PreferenceStore ps=RpgmPreferenceStore.getInstance();
-						ps.setValue(RpgmPreferenceStore.LAST_SAVED_CAMPAIGNS, "");
+						ps.setValue(RpgmPreferenceStore.LAST_SAVED_CAMPAIGNS, ""); //$NON-NLS-1$
 						try {
 							ps.save();
 						} catch (IOException e) {
@@ -93,8 +93,8 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 	public boolean preShutdown() {
 		//warning, not saved
 		if (Application.isDirty()){
-			String[] btns={"Save","Ignore","Cancel"};
-			MessageDialog input=new MessageDialog( getWorkbenchConfigurer().getWorkbench().getActiveWorkbenchWindow().getShell(), "Save data", null, "There are some unsaved changes, do you want to save your data before closing the application ?",MessageDialog.WARNING,btns , 1);
+			String[] btns={Messages.UnsavedChanges_Save,Messages.UnsavedChanges_Ignore,Messages.UnsavedChanges_Cancel};
+			MessageDialog input=new MessageDialog( getWorkbenchConfigurer().getWorkbench().getActiveWorkbenchWindow().getShell(), Messages.UnsavedChanges_Title, null, Messages.UnsavedChanges_Message,MessageDialog.WARNING,btns , 1);
 			int ret=input.open();
 			if (ret==0){
 				SaveAction act=new SaveAction(getWorkbenchConfigurer().getWorkbench().getActiveWorkbenchWindow());
