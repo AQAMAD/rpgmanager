@@ -16,7 +16,7 @@ public interface IImageKeys {
 	public static final String PREFERENCES = "icons/actions/Preferences.png"; //$NON-NLS-1$
 	public static final String INDEX = "icons/actions/Index.png"; //$NON-NLS-1$
 	public static final String LOCK = "icons/actions/Lock.png"; //$NON-NLS-1$
-	public static final String WORKSPACE = "icons/special/workspace.png"; //$NON-NLS-1$
+	public static final String WORKSPACE = "icons/special/Workspace.png"; //$NON-NLS-1$
 	//big display items
 	public static final String BIGITEM = "icons/branding/Folder-Developer-48x48.png"; //$NON-NLS-1$
 	public static final String BIGWORKSPACE = "icons/branding/Workspace-48x48.png"; //$NON-NLS-1$

@@ -15,6 +15,7 @@
 		<copy todir="${buildDirectory}/plugins">
 			<fileset dir="${workspacelocation}">
 				<include name="com.delegreg.rpgm/**" />
+				<include name="com.delegreg.rpgm.product/**" />
 				<include name="com.delegreg.rpgm.help/**" />
 				<include name="com.delegreg.rpgm.lib.javazoom/**" />
 				<include name="com.delegreg.rpgm.lib.htmlparser/**" />

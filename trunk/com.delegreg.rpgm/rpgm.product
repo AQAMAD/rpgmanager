@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="RPGM Campaign Manager" id="com.delegreg.rpgm.product" application="com.delegreg.rpgm.application" version="0.1.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="RPGM Campaign Manager" uid="com.delegreg.rpgm.product" id="com.delegreg.rpgm.product" application="com.delegreg.rpgm.application" version="0.1.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/com.delegreg.rpgm/icons/branding/Folder-Developer-128x128.png"/>
@@ -14,7 +14,6 @@
    </configIni>
 
    <launcherArgs>
-      <programArgs>-data @noDefault</programArgs>
       <vmArgs>-Dorg.jpedal.jai=true
 -Xms128m
 -Xmx1024m</vmArgs>
