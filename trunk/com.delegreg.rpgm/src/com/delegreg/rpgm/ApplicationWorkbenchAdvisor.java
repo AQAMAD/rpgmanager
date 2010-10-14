@@ -1,6 +1,7 @@
 package com.delegreg.rpgm;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
@@ -72,6 +73,14 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 			Display.getDefault().syncExec(new Runnable() {
 				  public void run() {
 						MessageDialog.openError(new Shell(), Messages.File_LoadErrorTitle, Messages.File_LoadErrorMessage);
+						PreferenceStore ps=RpgmPreferenceStore.getInstance();
+						ps.setValue(RpgmPreferenceStore.LAST_SAVED_CAMPAIGNS, "");
+						try {
+							ps.save();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 					}
 				});
 			

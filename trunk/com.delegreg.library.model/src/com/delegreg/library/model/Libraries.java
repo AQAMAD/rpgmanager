@@ -11,7 +11,7 @@ public class Libraries extends BaseContaineableContainer<Library> {
 	private String solidFolderPath;
 	
 	public Libraries(IContainer<? extends IContaineable> parent) {
-		setName(Messages.RPGMAdapterFactory_LibrariesName);
+		setName(Messages.LibrariesName);
 		setContainer(parent);
 	}
 
