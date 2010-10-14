@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="RPGM Campaign Manager" uid="com.delegreg.rpgm.product" id="com.delegreg.rpgm.product" application="com.delegreg.rpgm.application" version="0.1.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/com.delegreg.rpgm/icons/branding/Folder-Developer-128x128.png"/>
+      <text>
+         %aboutText
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgs>-Dorg.jpedal.jai=true
+-Xms128m
+-Xmx1024m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/com.delegreg.rpgm/icons/branding/Folder-Developer-16x16.png" i32="/com.delegreg.rpgm/icons/branding/Folder-Developer-32x32.png" i48="/com.delegreg.rpgm/icons/branding/Folder-Developer-48x48.png" i128="/com.delegreg.rpgm/icons/branding/Folder-Developer-128x128.png"/>
+
+   <splash
+      location="com.delegreg.rpgm"
+      startupProgressRect="1,385,445,15"
+      startupMessageRect="7,360,445,20"
+      startupForegroundColor="000000" />
+   <launcher name="RPGM">
+      <solaris/>
+      <win useIco="true">
+         <ico path="/com.delegreg.rpgm/icons/branding/Folder-Developer.ico"/>
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="com.delegreg.rpgm"/>
+      <plugin id="com.delegreg.rpgm.lib.htmlparser"/>
+      <plugin id="com.delegreg.rpgm.lib.javazoom"/>
+      <plugin id="com.delegreg.rpgm.lib.jpedal"/>
+      <plugin id="com.delegreg.rpgm.lib.xstream"/>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="net.jonbuck.texteditor"/>
+      <plugin id="net.jonbuck.texteditor.nl" fragment="true"/>
+      <plugin id="org.apache.commons.lang"/>
+      <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.beans"/>
+      <plugin id="org.eclipse.core.databinding.observable"/>
+      <plugin id="org.eclipse.core.databinding.property"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.net"/>
+      <plugin id="org.eclipse.core.net.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.security"/>
+      <plugin id="org.eclipse.equinox.security.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.jface.text"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.text"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.forms"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.eclipse.update.configurator"/>
+      <plugin id="org.eclipse.update.core"/>
+      <plugin id="org.eclipse.update.core.win32" fragment="true"/>
+      <plugin id="org.eclipse.update.ui"/>
+   </plugins>
+
+   <features>
+      <feature id="com.delegreg.rpgm.feature" version="0.1.0.qualifier"/>
+   </features>
+
+
+</product>
