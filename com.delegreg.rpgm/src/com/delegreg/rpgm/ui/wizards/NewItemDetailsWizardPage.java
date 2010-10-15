@@ -19,7 +19,10 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Text;
 
+import com.delegreg.core.IContaineable;
+import com.delegreg.core.IContainer;
 import com.delegreg.core.INameable;
+import com.delegreg.core.ui.wizardpages.INewContaineableDetailPage;
 import com.delegreg.library.model.AudioDocument;
 import com.delegreg.library.model.AudioRessource;
 import com.delegreg.library.model.HttpDocRessource;
@@ -37,7 +40,7 @@ import com.delegreg.rpgm.model.Location;
 import com.delegreg.rpgm.model.Scenario;
 import com.delegreg.rpgm.model.Sequence;
 
-public class NewItemDetailsWizardPage extends WizardPage {
+public class NewItemDetailsWizardPage extends WizardPage  implements INewContaineableDetailPage {
 	private Label lblChosenItemType ;
 	private Text txtName;
 	private Spinner spnField1;
@@ -62,6 +65,7 @@ public class NewItemDetailsWizardPage extends WizardPage {
 	private Button btnDirChoose1;
 	private Label lblDir1;
 	private FileDialog dialog;
+	private boolean valid=false;
 	
 	/**
 	 * Create the wizard.
@@ -73,8 +77,7 @@ public class NewItemDetailsWizardPage extends WizardPage {
 	/**
 	 * @wbp.parser.constructor
 	 */
-	public NewItemDetailsWizardPage(String pageName, String title,
-			ImageDescriptor titleImage) {
+	public NewItemDetailsWizardPage(String pageName, String title, ImageDescriptor titleImage) {
 		this(pageName);
 		this.setTitle(title);
 		this.setImageDescriptor(titleImage);
@@ -227,6 +230,7 @@ public class NewItemDetailsWizardPage extends WizardPage {
 			});
 			btnDirChoose1.setText("..."); //$NON-NLS-1$
 		}
+		onEnterPage();		
 	}
 
 
@@ -398,7 +402,7 @@ public class NewItemDetailsWizardPage extends WizardPage {
 		//System.out.println("nidwp.cftnp");
 		//System.out.println(model.getClass().getSimpleName());
 		//System.out.println(parent.getClass().getSimpleName());
-		((NewItemWizard)getWizard()).setComplete(false);
+		valid=false;
 		if (txtName.getText().equals("")) { //$NON-NLS-1$
 			setErrorMessage(Messages.NewItemDetailsWizardPage_NameMandatory);
 			return false;
@@ -433,7 +437,7 @@ public class NewItemDetailsWizardPage extends WizardPage {
 			} 
 		} 
 		this.setErrorMessage(null);
-		((NewItemWizard)getWizard()).setComplete(true);
+		valid=true;
 		return super.canFlipToNextPage();
 	}
 
@@ -490,7 +494,26 @@ public class NewItemDetailsWizardPage extends WizardPage {
 			((Actor)model).setName(txtName.getText());
 		}	
 		if (noUIUpdate){return;}
+		canFlipToNextPage();
 		getWizard().getContainer().updateButtons();
+	}
+
+	@Override
+	public boolean canFinish() {
+		// TODO Auto-generated method stub
+		return valid;
+	}
+
+	@Override
+	public void setModel(IContaineable model) {
+		
+		
+	}
+
+	@Override
+	public void setParent(IContainer parent) {
+		
+		
 	}	
 	
 	

@@ -20,9 +20,9 @@ Require-Bundle: org.eclipse.core.runtime,
  com.delegreg.rpgm.lib.htmlparser;bundle-version="1.0.0",
  com.delegreg.rpgm.lib.jpedal;bundle-version="1.0.0",
  com.delegreg.rpgm.lib.xstream;bundle-version="1.0.0",
- com.delegreg.library.model;bundle-version="0.1.0",
  com.delegreg.rpgm.model;bundle-version="0.1.0",
- com.delegreg.core;bundle-version="0.1.0"
+ com.delegreg.core;bundle-version="0.1.0",
+ com.delegreg.library;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: .
 Eclipse-BuddyPolicy: registered

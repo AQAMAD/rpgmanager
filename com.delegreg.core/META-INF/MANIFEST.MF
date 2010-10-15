@@ -5,7 +5,9 @@ Bundle-SymbolicName: com.delegreg.core
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: com.delegreg.core.Activator
 Bundle-Vendor: DELEGREG
-Require-Bundle: org.eclipse.core.runtime
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jface;bundle-version="3.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
-Export-Package: com.delegreg.core
+Export-Package: com.delegreg.core,
+ com.delegreg.core.ui.wizardpages

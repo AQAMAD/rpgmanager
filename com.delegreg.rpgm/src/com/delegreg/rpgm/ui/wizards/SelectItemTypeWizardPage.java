@@ -21,15 +21,14 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 
-import com.delegreg.core.BaseContaineable;
-import com.delegreg.core.BaseContaineableContainer;
-import com.delegreg.core.BaseContainer;
 import com.delegreg.core.IContaineable;
+import com.delegreg.core.IContainer;
 import com.delegreg.core.INameable;
+import com.delegreg.core.ui.wizardpages.INewContaineableDetailPage;
 import com.delegreg.rpgm.Messages;
 import com.delegreg.rpgm.core.RpgmRelationalAdapter;
 
-public class SelectItemTypeWizardPage extends WizardPage {
+public class SelectItemTypeWizardPage extends WizardPage implements INewContaineableDetailPage{
 
 	private ArrayList<INameable> baseTypes=new ArrayList<INameable>();
 	private TableViewer listView;
@@ -63,8 +62,7 @@ public class SelectItemTypeWizardPage extends WizardPage {
 	 */
 	@Override
 	public boolean canFlipToNextPage() {
-		// TODO Auto-generated method stub
-		if ((((NewItemWizard)getWizard()).getModel()==null)) {
+		if (((NewItemWizard)getWizard()).getModel()==null) {
 			return false;
 		} else {
 			return super.canFlipToNextPage();
@@ -73,7 +71,6 @@ public class SelectItemTypeWizardPage extends WizardPage {
 
 	@Override
 	public void createControl(Composite parent) {
-		// TODO Auto-generated method stub
 		Composite container = new Composite(parent, SWT.NULL);
 		container.setLayout(new GridLayout(1, false));
 		setControl(container);
@@ -96,14 +93,13 @@ public class SelectItemTypeWizardPage extends WizardPage {
 					// TODO Auto-generated method stub
 					StructuredSelection selection=(StructuredSelection) event.getSelection();
 					((NewItemWizard)getWizard()).setModel(null);
-					Iterator iter = selection.iterator();
-					if (!iter.hasNext()) {
+					if (selection.isEmpty()) {
 						//System.out.println("no selected");
 						getWizard().getContainer().updateButtons();
 						return;
 					}else {
 						//System.out.println("selected");
-						IContaineable elem = (IContaineable) iter.next();
+						IContaineable elem = (IContaineable) selection.getFirstElement();
 						((NewItemWizard)getWizard()).setModel(elem);						
 						getWizard().getContainer().updateButtons();
 					}
@@ -126,7 +122,7 @@ public class SelectItemTypeWizardPage extends WizardPage {
 		}
 	}
 
-	public void init(BaseContainer initialSelection) {
+	public void init(IContainer initialSelection) {
 		try {
 			RpgmRelationalAdapter adapter=new RpgmRelationalAdapter(initialSelection);
 			for (Iterator iterator = adapter.getContentTypes().iterator(); iterator
@@ -148,9 +144,32 @@ public class SelectItemTypeWizardPage extends WizardPage {
 	 */
 	@Override
 	public IWizardPage getNextPage() {
-		//System.out.println("gnp1");
-		((NewItemDetailsWizardPage)super.getNextPage()).onEnterPage();
+		//((WizardPage)super.getNextPage()).onEnterPage();
 		return super.getNextPage();
+	}
+
+	@Override
+	public boolean canFinish() {
+		// TODO Auto-generated method stub
+		return !(((NewItemWizard)getWizard()).getModel()==null);
+	}
+
+	@Override
+	public void onEnterPage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setModel(IContaineable model) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setParent(IContainer parent) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
