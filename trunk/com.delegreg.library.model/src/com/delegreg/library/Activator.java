@@ -1,4 +1,4 @@
-package com.delegreg.library.model;
+package com.delegreg.library;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

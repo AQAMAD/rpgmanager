@@ -7,6 +7,15 @@ import org.eclipse.osgi.util.NLS;
 public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "com.delegreg.library.messages"; //$NON-NLS-1$
 	public static String LibrariesName;
+	public static String NewLibrary;
+	public static String NewPdfDocument;
+	public static String NewWebDocument;
+	public static String NewAudioDocument;
+	public static String NewAudioRessource;
+	public static String WizardPage_NameMandatory;
+	public static String WizardPage_ChosenItemType;
+	public static String WizardPage_WillBeAddedTo;
+	public static String WizardPage_Name;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

@@ -3,7 +3,7 @@ package com.delegreg.library.model;
 import com.delegreg.core.BaseContaineableContainer;
 
 
-public class Library extends BaseContaineableContainer<IDocument> {
+public class Library extends BaseContaineableContainer<IDocument> implements ILibraryElement{
 	
 	private Libraries subLibraries;
 

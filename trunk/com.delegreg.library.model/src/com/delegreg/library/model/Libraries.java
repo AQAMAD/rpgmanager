@@ -6,7 +6,7 @@ import com.delegreg.core.IContainer;
 import com.delegreg.library.Messages;
 
 
-public class Libraries extends BaseContaineableContainer<Library> {
+public class Libraries extends BaseContaineableContainer<Library> implements ILibraryElement {
 
 	private String solidFolderPath;
 	
