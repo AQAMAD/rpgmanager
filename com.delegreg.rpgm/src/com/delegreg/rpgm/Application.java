@@ -35,19 +35,19 @@ public class Application implements IApplication {
 
 	/** The Constant PLUGIN_ID. */
 	public static final String PLUGIN_ID = "com.delegreg.rpgm";	//$NON-NLS-1$
-	
+
 	/** The current campaigns. */
 	private static Campaigns currentCampaigns;
-	
+
 	/** The stat blocks. */
 	private static HashMap<Class,Class> statBlocks=new HashMap<Class,Class>();
-	
+
 	/** The dirty. */
 	private static boolean dirty=false;
-	
+
 	/** The current file name. */
 	private static String currentFileName=null; 
-	
+
 	/** The cl. */
 	private static IContentListener cl=new IContentListener() {
 		@Override
@@ -55,7 +55,7 @@ public class Application implements IApplication {
 			setDirty(true);
 		}
 	};;;
-	
+
 
 	/* (non-Javadoc)
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
@@ -65,64 +65,65 @@ public class Application implements IApplication {
 		try {
 			currentCampaigns=new Campaigns();
 			currentCampaigns.addContentListener(cl);
-			
+
 			statBlocks.put(DefaultStatBlock.class, DefaultStatBlockDetailsPage.class);
 
-		    // fetch the Location that we will be modifying 
-		    Location instanceLoc = Platform.getInstanceLocation(); 
-			
+			// fetch the Location that we will be modifying 
+			Location instanceLoc = Platform.getInstanceLocation(); 
+
 			// get what the user last said about remembering the workspace location 
-			        boolean remember = PickWorkspaceDialog.isRememberWorkspace(); 
-			        // get the last used workspace location 
-			        String lastUsedWs = PickWorkspaceDialog.getLastSetWorkspaceDirectory(); 
-			        // if we have a "remember" but no last used workspace, it's not much to remember 
-			        if (remember && (lastUsedWs == null || lastUsedWs.length() == 0)) { 
-			            remember = false; 
-			        } 
-			        // check to ensure the workspace location is still OK 
-			        if (remember) { 
-			            // if there's any problem whatsoever with the workspace, force a dialog which in its turn will tell them what's bad 
-			            String ret = PickWorkspaceDialog.checkWorkspaceDirectory(Display.getDefault().getActiveShell(), lastUsedWs, false, false); 
-			            if (ret != null) { 
-			            remember = false; 
-			            } 
-			        } 
-			        // if we don't remember the workspace, show the dialog 
-			        if (!remember) { 
-			            PickWorkspaceDialog pwd = new PickWorkspaceDialog(false,AbstractUIPlugin.imageDescriptorFromPlugin(Application.PLUGIN_ID, IImageKeys.BIGWORKSPACE).createImage()); 
-			            int pick = pwd.open(); 
-			            // if the user cancelled, we can't do anything as we need a workspace, so in this case, we tell them and exit 
-			            if (pick == Window.CANCEL) { 
-			            if (pwd.getSelectedWorkspaceLocation()  == null) { 
-			                MessageDialog.openError(display.getActiveShell(), Messages.Workspace_Error, 
-			                    Messages.Workspace_CannotRunWithout); 
-			                try { 
-			                PlatformUI.getWorkbench().close(); 
-			                } catch (Exception err) { 
-			                } 
-			                System.exit(0); 
-			                return IApplication.EXIT_OK; 
-			            } 
-			            } 
-			            else { 
-			            // tell Eclipse what the selected location was and continue 
-			            instanceLoc.set(new URL("file", null, pwd.getSelectedWorkspaceLocation()), false);  //$NON-NLS-1$
-			            } 
-			        } 
-			        else { 
-			            // set the last used location and continue 
-			            instanceLoc.set(new URL("file", null, lastUsedWs), false);  //$NON-NLS-1$
-			        }     			
+			boolean remember = PickWorkspaceDialog.isRememberWorkspace(); 
+			// get the last used workspace location 
+			String lastUsedWs = PickWorkspaceDialog.getLastSetWorkspaceDirectory(); 
+			// if we have a "remember" but no last used workspace, it's not much to remember 
+			if (remember && (lastUsedWs == null || lastUsedWs.length() == 0)) { 
+				remember = false; 
+			} 
+			// check to ensure the workspace location is still OK 
+			if (remember) { 
+				// if there's any problem whatsoever with the workspace, force a dialog which in its turn will tell them what's bad 
+				String ret = PickWorkspaceDialog.checkWorkspaceDirectory(Display.getDefault().getActiveShell(), lastUsedWs, false, false); 
+				if (ret != null) { 
+					remember = false; 
+				} 
+			} 
+			// if we don't remember the workspace, show the dialog 
+			if (!remember) { 
+				PickWorkspaceDialog pwd = new PickWorkspaceDialog(false,AbstractUIPlugin.imageDescriptorFromPlugin(Application.PLUGIN_ID, IImageKeys.BIGWORKSPACE).createImage()); 
+				int pick = pwd.open(); 
+				//System.out.print(PickWorkspaceDialog.getLastSetWorkspaceDirectory());
+				// if the user cancelled, we can't do anything as we need a workspace, so in this case, we tell them and exit 
+				if (pick == Window.CANCEL) { 
+					if (pwd.getSelectedWorkspaceLocation()  == null) { 
+						MessageDialog.openError(display.getActiveShell(), Messages.Workspace_Error, 
+								Messages.Workspace_CannotRunWithout); 
+						try { 
+							PlatformUI.getWorkbench().close(); 
+						} catch (Exception err) { 
+						} 
+						System.exit(0); 
+						return IApplication.EXIT_OK; 
+					} 
+				} 
+				else { 
+					// tell Eclipse what the selected location was and continue 
+					instanceLoc.set(new URL("file", null, pwd.getSelectedWorkspaceLocation()), false);  //$NON-NLS-1$
+				} 
+			} 
+			else { 
+				// set the last used location and continue 
+				instanceLoc.set(new URL("file", null, lastUsedWs), false);  //$NON-NLS-1$
+			}     			
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());
 
 			if (returnCode == PlatformUI.RETURN_RESTART)
-				{return IApplication.EXIT_RESTART;}
+			{return IApplication.EXIT_RESTART;}
 			else
-				{return IApplication.EXIT_OK;}
+			{return IApplication.EXIT_OK;}
 		} finally {
 			display.dispose();
 		}
-		
+
 	}
 
 	/* (non-Javadoc)
@@ -153,14 +154,14 @@ public class Application implements IApplication {
 		currentCampaigns = theCampaigns;
 		IWorkbenchWindow wbw=PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 		if (wbw!=null){
-		IViewReference[] vr=wbw.getActivePage().getViewReferences();
-		for (int i = 0; i < vr.length; i++) {
-			IViewPart part=vr[i].getView(false);
-			if (part instanceof CampaignsView){
-				((CampaignsView)part).setCampaigns(currentCampaigns);
+			IViewReference[] vr=wbw.getActivePage().getViewReferences();
+			for (int i = 0; i < vr.length; i++) {
+				IViewPart part=vr[i].getView(false);
+				if (part instanceof CampaignsView){
+					((CampaignsView)part).setCampaigns(currentCampaigns);
+				}
 			}
-		}
-		setDirty(false);
+			setDirty(false);
 		}
 		currentCampaigns.addContentListener(cl);
 	}
@@ -184,7 +185,7 @@ public class Application implements IApplication {
 		Shell theshell=PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
 		theshell.setText(getTitle());		
 	}
-	
+
 	/**
 	 * Gets the title.
 	 *
