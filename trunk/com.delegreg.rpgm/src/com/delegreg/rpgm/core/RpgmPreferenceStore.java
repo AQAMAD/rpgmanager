@@ -13,7 +13,7 @@ public class RpgmPreferenceStore {
 	public static final String SAVE_CAMPAIGNS_DIRECTORY = "save_campaigns_directory"; //$NON-NLS-1$
 	public static final String WORKSPACE_ROOT_DIRECTORY = "workspace_root_dir"; //$NON-NLS-1$
 	public static final String REMEMBER_WORKSPACE = "remember_workspace"; //$NON-NLS-1$
-	public static final String LAST_USED_WORKSPACE = "last_used_workspace"; //$NON-NLS-1$
+	public static final String WORKSPACES_MRU = "workspaces_mru"; //$NON-NLS-1$
 
 	public static final String NODE_GENERAL = "General"; //$NON-NLS-1$
 	
@@ -29,7 +29,7 @@ public class RpgmPreferenceStore {
 		ps.setDefault(HIRES_PDF, 100);
 		ps.setDefault(LAST_SAVED_CAMPAIGNS, ""); //$NON-NLS-1$
 		ps.setDefault(REMEMBER_WORKSPACE, false); //$NON-NLS-1$
-		ps.setDefault(LAST_USED_WORKSPACE, ""); //$NON-NLS-1$
+		ps.setDefault(WORKSPACES_MRU, ""); //$NON-NLS-1$
 		ps.setDefault(WORKSPACE_ROOT_DIRECTORY, ""); //$NON-NLS-1$
 	}
 	

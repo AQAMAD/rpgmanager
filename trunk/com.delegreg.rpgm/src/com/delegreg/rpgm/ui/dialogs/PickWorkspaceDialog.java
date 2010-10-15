@@ -45,7 +45,16 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
 
     // this are our preferences 
     private static PreferenceStore  _preferences           = RpgmPreferenceStore.getInstance();
-
+    //which we need to load
+    static {
+    	try {
+			_preferences.load();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
     // various dialog messages
     private static final String _StrMsg                = "Your workspace is where settings and various important files will be stored.";
     private static final String _StrInfo               = "Please select a directory that will be the workspace root";
@@ -106,7 +115,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
      * @return null if none
      */
     public static String getLastSetWorkspaceDirectory() {
-        return _preferences.getString(RpgmPreferenceStore.LAST_USED_WORKSPACE);
+        return _preferences.getString(RpgmPreferenceStore.WORKSPACE_ROOT_DIRECTORY);
     }
 
     @Override
@@ -141,7 +150,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
             _RememberWorkspaceButton.setText("Remember workspace");
             _RememberWorkspaceButton.setSelection(_preferences.getBoolean(RpgmPreferenceStore.REMEMBER_WORKSPACE));
 
-            String lastUsed = _preferences.getString(RpgmPreferenceStore.LAST_USED_WORKSPACE);
+            String lastUsed = _preferences.getString(RpgmPreferenceStore.WORKSPACES_MRU);
             _lastUsedWorkspaces = new ArrayList<String>();
             if (lastUsed != null) {
                 String[] all = lastUsed.split(_SplitChar);
@@ -401,7 +410,7 @@ public class PickWorkspaceDialog extends TitleAreaDialog {
 
         // save them onto our preferences
         _preferences.setValue(RpgmPreferenceStore.REMEMBER_WORKSPACE, _RememberWorkspaceButton.getSelection());
-        _preferences.setValue(RpgmPreferenceStore.LAST_USED_WORKSPACE, buf.toString());
+        _preferences.setValue(RpgmPreferenceStore.WORKSPACES_MRU, buf.toString());
 
         // now create it 
         boolean ok = checkAndCreateWorkspaceRoot(str);
