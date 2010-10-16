@@ -56,7 +56,7 @@
 			<property name="ws" value="win32"/>
 			<property name="os" value="win32"/>
 		</ant>
-		<ant antfile="build.xml" dir="../com.delegreg.library.model" target="${target}">
+		<ant antfile="build.xml" dir="../com.delegreg.library" target="${target}">
 			<property name="arch" value="x86"/>
 			<property name="ws" value="win32"/>
 			<property name="os" value="win32"/>
@@ -109,7 +109,7 @@
 		<property name="feature.base" value="${feature.temp.folder}"/>
 		<delete dir="${feature.temp.folder}"/>
 		<mkdir dir="${feature.temp.folder}"/>
-		<mkdir dir="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010141341"/>
+		<mkdir dir="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010161559"/>
 		<antcall target="gather.bin.parts" inheritAll="false">
 			<param name="os" value="macosx,win32"/>
 			<param name="feature.base" value="${feature.temp.folder}"/>
@@ -118,38 +118,38 @@
 			<param name="arch" value="x86"/>
 			<param name="nl" value="en,fr"/>
 		</antcall>
-		<jar destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.jar" basedir="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010141341"/>
+		<jar destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.jar" basedir="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010161559"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
 	<target name="publish.bin.parts" depends="init" if="p2.publish.parts">
-		<mkdir dir="${feature.temp.folder}"/>
-		<copy todir="${feature.temp.folder}" failonerror="true" overwrite="true">
+		<mkdir dir="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010161559"/>
+		<copy todir="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010161559" failonerror="true" overwrite="true">
 			<fileset dir="${basedir}">
 				<include name="feature.xml"/>
 			</fileset>
 		</copy>
-		<eclipse.idReplacer featureFilePath="${feature.temp.folder}/feature.xml"  selfVersion="0.1.0.201010141341" featureIds="org.eclipse.rcp:0.0.0,3.5.0.v20090519-9SA0FwxFv6x089WEf-TWh11,org.eclipse.help:0.0.0,1.1.0.v20090602-7e7eFAlFEx2XZoYqwI68e2F," pluginIds="org.eclipse.core.net.win32.x86:0.0.0,1.0.0.I20080909,org.eclipse.equinox.app:0.0.0,1.2.0.v20090520-1800,com.delegreg.rpgm.lib.xstream:0.0.0,1.0.1,org.eclipse.swt.win32.win32.x86:0.0.0,3.5.0.v3550b,org.eclipse.update.configurator:0.0.0,3.3.0.v20090312,org.eclipse.equinox.preferences:0.0.0,3.2.300.v20090520-1800,org.eclipse.text:0.0.0,3.5.0.v20090513-2000,net.jonbuck.texteditor.nl:0.0.0,1.0.0,org.eclipse.update.core:0.0.0,3.2.300.v20090525,org.eclipse.ui:0.0.0,3.5.0.I20090604-2000,com.delegreg.rpgm:0.0.0,0.1.0.201010141341,org.eclipse.equinox.security:0.0.0,1.0.100.v20090520-1800,com.delegreg.rpgm.lib.htmlparser:0.0.0,1.0.1,org.eclipse.update.core.win32:0.0.0,3.2.100.v20080107,org.eclipse.core.commands:0.0.0,3.5.0.I20090525-2000,com.ibm.icu:0.0.0,4.0.1.v20090415,org.apache.commons.lang:0.0.0,2.4.0,org.eclipse.core.expressions:0.0.0,3.4.100.v20090429-1800,org.eclipse.core.runtime.compatibility.registry:0.0.0,3.2.200.v20090429-1800,org.eclipse.equinox.common:0.0.0,3.5.0.v20090520-1800,org.eclipse.osgi:0.0.0,3.5.0.v20090520,org.eclipse.jface.text:0.0.0,3.5.0.v20090602,org.eclipse.help:0.0.0,3.4.0.v20090526,org.eclipse.ui.workbench:0.0.0,3.5.0.I20090603-2000,org.eclipse.core.runtime:0.0.0,3.5.0.v20090525,org.eclipse.core.jobs:0.0.0,3.4.100.v20090429-1800,org.eclipse.ui.forms:0.0.0,3.4.0.v20090526,org.eclipse.core.contenttype:0.0.0,3.4.0.v20090429-1800,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.100.v20090520-1800,net.jonbuck.texteditor:0.0.0,1.0.0,org.eclipse.core.databinding.property:0.0.0,1.2.0.I20090526-2000,org.eclipse.jface:0.0.0,3.5.0.I20090525-2000,org.eclipse.core.databinding.observable:0.0.0,1.2.0.I20090604-2000,org.eclipse.core.net:0.0.0,1.2.0.I20090522-1010,org.eclipse.update.ui:0.0.0,3.2.200.v20090213,org.eclipse.core.databinding.beans:0.0.0,1.2.0.I20090525-2000,org.eclipse.equinox.registry:0.0.0,3.4.100.v20090520-1800,org.apache.commons.logging:0.0.0,1.0.4.v200904062259,com.delegreg.rpgm.lib.javazoom:0.0.0,1.0.1,org.eclipse.swt:0.0.0,3.5.0.v3550b,org.eclipse.core.databinding:0.0.0,1.2.0.I20090604-2000,org.eclipse.jface.databinding:0.0.0,1.3.0.I20090525-2000,com.delegreg.rpgm.lib.jpedal:0.0.0,1.0.1,com.delegreg.rpgm.help:0.0.0,0.1.0.201010141341,com.delegreg.core:0.0.0,0.1.0.201010141341,com.delegreg.library.model:0.0.0,0.1.0.201010141341,com.delegreg.rpgm.model:0.0.0,0.1.0.201010141341,"/>
+		<eclipse.idReplacer featureFilePath="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010161559/feature.xml"  selfVersion="0.1.0.201010161559" featureIds="org.eclipse.rcp:0.0.0,3.6.1.r361_v20100827-9OArFLdFjY-ThSQXmKvKz0_T,org.eclipse.help:0.0.0,1.2.0.v20100427-7e7jEQFEp4jsWcboLU9l93," pluginIds="org.eclipse.core.net.win32.x86:0.0.0,1.0.100.I20100511-0800,org.eclipse.equinox.app:0.0.0,1.3.1.R36x_v20100803,com.delegreg.rpgm.lib.xstream:0.0.0,1.0.1,org.eclipse.swt.win32.win32.x86:0.0.0,3.6.1.v3655c,org.eclipse.update.configurator:0.0.0,3.3.100.v20100512,org.eclipse.equinox.preferences:0.0.0,3.3.0.v20100503,org.eclipse.text:0.0.0,3.5.0.v20100601-1300,net.jonbuck.texteditor.nl:0.0.0,1.0.0,org.eclipse.update.core:0.0.0,3.2.402.R36x_v20100629,org.eclipse.ui:0.0.0,3.6.1.M20100826-1330,com.delegreg.rpgm:0.0.0,0.1.0.201010161559,org.eclipse.equinox.security:0.0.0,1.0.200.v20100503,com.delegreg.rpgm.lib.htmlparser:0.0.0,1.0.1,org.eclipse.update.core.win32:0.0.0,3.2.200.v20100512,org.eclipse.core.commands:0.0.0,3.6.0.I20100512-1500,com.ibm.icu:0.0.0,4.2.1.v20100412,org.apache.commons.lang:0.0.0,2.4.0,org.eclipse.core.expressions:0.0.0,3.4.200.v20100505,org.eclipse.core.runtime.compatibility.registry:0.0.0,3.3.0.v20100520,org.eclipse.equinox.common:0.0.0,3.6.0.v20100503,org.eclipse.osgi:0.0.0,3.6.1.R36x_v20100806,org.eclipse.jface.text:0.0.0,3.6.1.r361_v20100825-0800,org.eclipse.help:0.0.0,3.5.0.v20100524,org.eclipse.ui.workbench:0.0.0,3.6.1.M20100826-1330,org.eclipse.core.runtime:0.0.0,3.6.0.v20100505,org.eclipse.core.jobs:0.0.0,3.5.1.R36x_v20100824,org.eclipse.ui.forms:0.0.0,3.5.2.r36_v20100702,org.eclipse.core.contenttype:0.0.0,3.4.100.v20100505-1235,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.200.v20100503,net.jonbuck.texteditor:0.0.0,1.0.0,org.eclipse.core.databinding.property:0.0.0,1.3.0.I20100601-0800,org.eclipse.jface:0.0.0,3.6.1.M20100825-0800,org.eclipse.core.databinding.observable:0.0.0,1.3.0.I20100601-0800,org.eclipse.core.net:0.0.0,1.2.100.I20100511-0800,org.eclipse.update.ui:0.0.0,3.2.300.v20100512,org.eclipse.core.databinding.beans:0.0.0,1.2.100.I20100601-0800,org.eclipse.equinox.registry:0.0.0,3.5.0.v20100503,org.apache.commons.logging:0.0.0,1.0.4.v201005080501,com.delegreg.rpgm.lib.javazoom:0.0.0,1.0.1,org.eclipse.swt:0.0.0,3.6.1.v3655c,org.eclipse.core.databinding:0.0.0,1.3.100.I20100601-0800,org.eclipse.jface.databinding:0.0.0,1.4.0.I20100601-0800,com.delegreg.rpgm.lib.jpedal:0.0.0,1.0.1,com.delegreg.rpgm.help:0.0.0,0.1.0.201010161559,com.delegreg.core:0.0.0,0.1.0.201010161559,com.delegreg.rpgm.model:0.0.0,0.1.0.201010161559,com.delegreg.library:0.0.0,0.1.0.201010161559,"/>
 		<eclipse.gatherFeature 
 		   metadataRepository="${p2.build.repo}"
 		   artifactRepository="${p2.build.repo}"
-		   buildResultFolder="${feature.temp.folder}"
+		   buildResultFolder="${feature.temp.folder}/features/com.delegreg.rpgm.feature_0.1.0.201010161559"
 		   baseDirectory="${basedir}"
 		/>
 	</target>
 
 	<target name="gather.bin.parts" depends="init" if="feature.base">
-		<mkdir dir="${feature.base}/features/com.delegreg.rpgm.feature_0.1.0.201010141341"/>
+		<mkdir dir="${feature.base}/features/com.delegreg.rpgm.feature_0.1.0.201010161559"/>
 		<antcall target="children">
 			<param name="target" value="gather.bin.parts"/>
 			<param name="destination.temp.folder" value="${feature.base}/plugins"/>
 		</antcall>
-		<copy todir="${feature.base}/features/com.delegreg.rpgm.feature_0.1.0.201010141341" failonerror="true" overwrite="false">
+		<copy todir="${feature.base}/features/com.delegreg.rpgm.feature_0.1.0.201010161559" failonerror="true" overwrite="false">
 			<fileset dir="${basedir}">
 				<include name="feature.xml"/>
 			</fileset>
 		</copy>
-		<eclipse.idReplacer featureFilePath="${feature.base}/features/com.delegreg.rpgm.feature_0.1.0.201010141341/feature.xml"  selfVersion="0.1.0.201010141341" featureIds="org.eclipse.rcp:0.0.0,3.5.0.v20090519-9SA0FwxFv6x089WEf-TWh11,org.eclipse.help:0.0.0,1.1.0.v20090602-7e7eFAlFEx2XZoYqwI68e2F," pluginIds="org.eclipse.core.net.win32.x86:0.0.0,1.0.0.I20080909,org.eclipse.equinox.app:0.0.0,1.2.0.v20090520-1800,com.delegreg.rpgm.lib.xstream:0.0.0,1.0.1,org.eclipse.swt.win32.win32.x86:0.0.0,3.5.0.v3550b,org.eclipse.update.configurator:0.0.0,3.3.0.v20090312,org.eclipse.equinox.preferences:0.0.0,3.2.300.v20090520-1800,org.eclipse.text:0.0.0,3.5.0.v20090513-2000,net.jonbuck.texteditor.nl:0.0.0,1.0.0,org.eclipse.update.core:0.0.0,3.2.300.v20090525,org.eclipse.ui:0.0.0,3.5.0.I20090604-2000,com.delegreg.rpgm:0.0.0,0.1.0.201010141341,org.eclipse.equinox.security:0.0.0,1.0.100.v20090520-1800,com.delegreg.rpgm.lib.htmlparser:0.0.0,1.0.1,org.eclipse.update.core.win32:0.0.0,3.2.100.v20080107,org.eclipse.core.commands:0.0.0,3.5.0.I20090525-2000,com.ibm.icu:0.0.0,4.0.1.v20090415,org.apache.commons.lang:0.0.0,2.4.0,org.eclipse.core.expressions:0.0.0,3.4.100.v20090429-1800,org.eclipse.core.runtime.compatibility.registry:0.0.0,3.2.200.v20090429-1800,org.eclipse.equinox.common:0.0.0,3.5.0.v20090520-1800,org.eclipse.osgi:0.0.0,3.5.0.v20090520,org.eclipse.jface.text:0.0.0,3.5.0.v20090602,org.eclipse.help:0.0.0,3.4.0.v20090526,org.eclipse.ui.workbench:0.0.0,3.5.0.I20090603-2000,org.eclipse.core.runtime:0.0.0,3.5.0.v20090525,org.eclipse.core.jobs:0.0.0,3.4.100.v20090429-1800,org.eclipse.ui.forms:0.0.0,3.4.0.v20090526,org.eclipse.core.contenttype:0.0.0,3.4.0.v20090429-1800,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.100.v20090520-1800,net.jonbuck.texteditor:0.0.0,1.0.0,org.eclipse.core.databinding.property:0.0.0,1.2.0.I20090526-2000,org.eclipse.jface:0.0.0,3.5.0.I20090525-2000,org.eclipse.core.databinding.observable:0.0.0,1.2.0.I20090604-2000,org.eclipse.core.net:0.0.0,1.2.0.I20090522-1010,org.eclipse.update.ui:0.0.0,3.2.200.v20090213,org.eclipse.core.databinding.beans:0.0.0,1.2.0.I20090525-2000,org.eclipse.equinox.registry:0.0.0,3.4.100.v20090520-1800,org.apache.commons.logging:0.0.0,1.0.4.v200904062259,com.delegreg.rpgm.lib.javazoom:0.0.0,1.0.1,org.eclipse.swt:0.0.0,3.5.0.v3550b,org.eclipse.core.databinding:0.0.0,1.2.0.I20090604-2000,org.eclipse.jface.databinding:0.0.0,1.3.0.I20090525-2000,com.delegreg.rpgm.lib.jpedal:0.0.0,1.0.1,com.delegreg.rpgm.help:0.0.0,0.1.0.201010141341,com.delegreg.core:0.0.0,0.1.0.201010141341,com.delegreg.library.model:0.0.0,0.1.0.201010141341,com.delegreg.rpgm.model:0.0.0,0.1.0.201010141341,"/>
+		<eclipse.idReplacer featureFilePath="${feature.base}/features/com.delegreg.rpgm.feature_0.1.0.201010161559/feature.xml"  selfVersion="0.1.0.201010161559" featureIds="org.eclipse.rcp:0.0.0,3.6.1.r361_v20100827-9OArFLdFjY-ThSQXmKvKz0_T,org.eclipse.help:0.0.0,1.2.0.v20100427-7e7jEQFEp4jsWcboLU9l93," pluginIds="org.eclipse.core.net.win32.x86:0.0.0,1.0.100.I20100511-0800,org.eclipse.equinox.app:0.0.0,1.3.1.R36x_v20100803,com.delegreg.rpgm.lib.xstream:0.0.0,1.0.1,org.eclipse.swt.win32.win32.x86:0.0.0,3.6.1.v3655c,org.eclipse.update.configurator:0.0.0,3.3.100.v20100512,org.eclipse.equinox.preferences:0.0.0,3.3.0.v20100503,org.eclipse.text:0.0.0,3.5.0.v20100601-1300,net.jonbuck.texteditor.nl:0.0.0,1.0.0,org.eclipse.update.core:0.0.0,3.2.402.R36x_v20100629,org.eclipse.ui:0.0.0,3.6.1.M20100826-1330,com.delegreg.rpgm:0.0.0,0.1.0.201010161559,org.eclipse.equinox.security:0.0.0,1.0.200.v20100503,com.delegreg.rpgm.lib.htmlparser:0.0.0,1.0.1,org.eclipse.update.core.win32:0.0.0,3.2.200.v20100512,org.eclipse.core.commands:0.0.0,3.6.0.I20100512-1500,com.ibm.icu:0.0.0,4.2.1.v20100412,org.apache.commons.lang:0.0.0,2.4.0,org.eclipse.core.expressions:0.0.0,3.4.200.v20100505,org.eclipse.core.runtime.compatibility.registry:0.0.0,3.3.0.v20100520,org.eclipse.equinox.common:0.0.0,3.6.0.v20100503,org.eclipse.osgi:0.0.0,3.6.1.R36x_v20100806,org.eclipse.jface.text:0.0.0,3.6.1.r361_v20100825-0800,org.eclipse.help:0.0.0,3.5.0.v20100524,org.eclipse.ui.workbench:0.0.0,3.6.1.M20100826-1330,org.eclipse.core.runtime:0.0.0,3.6.0.v20100505,org.eclipse.core.jobs:0.0.0,3.5.1.R36x_v20100824,org.eclipse.ui.forms:0.0.0,3.5.2.r36_v20100702,org.eclipse.core.contenttype:0.0.0,3.4.100.v20100505-1235,org.eclipse.equinox.security.win32.x86:0.0.0,1.0.200.v20100503,net.jonbuck.texteditor:0.0.0,1.0.0,org.eclipse.core.databinding.property:0.0.0,1.3.0.I20100601-0800,org.eclipse.jface:0.0.0,3.6.1.M20100825-0800,org.eclipse.core.databinding.observable:0.0.0,1.3.0.I20100601-0800,org.eclipse.core.net:0.0.0,1.2.100.I20100511-0800,org.eclipse.update.ui:0.0.0,3.2.300.v20100512,org.eclipse.core.databinding.beans:0.0.0,1.2.100.I20100601-0800,org.eclipse.equinox.registry:0.0.0,3.5.0.v20100503,org.apache.commons.logging:0.0.0,1.0.4.v201005080501,com.delegreg.rpgm.lib.javazoom:0.0.0,1.0.1,org.eclipse.swt:0.0.0,3.6.1.v3655c,org.eclipse.core.databinding:0.0.0,1.3.100.I20100601-0800,org.eclipse.jface.databinding:0.0.0,1.4.0.I20100601-0800,com.delegreg.rpgm.lib.jpedal:0.0.0,1.0.1,com.delegreg.rpgm.help:0.0.0,0.1.0.201010161559,com.delegreg.core:0.0.0,0.1.0.201010161559,com.delegreg.rpgm.model:0.0.0,0.1.0.201010161559,com.delegreg.library:0.0.0,0.1.0.201010161559,"/>
 		<antcall target="rootFiles">
 			<param name="rootTarget" value="rootFiles${os}_${ws}_${arch}"/>
 		</antcall>
@@ -181,7 +181,7 @@
 			<param name="nl" value="en,fr"/>
 			<param name="include.children" value="true"/>
 		</antcall>
-		<zip destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.bin.dist.zip" basedir="${feature.temp.folder}" filesonly="false" whenempty="skip" update="false"/>
+		<zip destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.bin.dist.zip" basedir="${feature.temp.folder}" filesonly="false" whenempty="skip" update="false"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
@@ -190,30 +190,34 @@
 		<mkdir dir="${feature.temp.folder}"/>
 		<antcall target="all.children">
 			<param name="target" value="gather.sources"/>
-			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/com.delegreg.rpgm.feature.source_0.1.0.201010141341/src"/>
+			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/com.delegreg.rpgm.feature.source_0.1.0.201010161559/src"/>
 			<param name="include.children" value="true"/>
 		</antcall>
-		<zip destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.src.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+		<zip destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.src.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
 	<target name="zip.logs" depends="init">
 		<delete dir="${feature.temp.folder}"/>
 		<mkdir dir="${feature.temp.folder}"/>
+		<condition property="logExtension.param" value="logExtension" else="logExtension.param"		>
+			<isset property="logExtension"/>
+		</condition>
 		<antcall target="all.children" inheritAll="false">
 			<param name="target" value="gather.logs"/>
 			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins"/>
 			<param name="include.children" value="true"/>
+			<param name="${logExtension.param}" value="${logExtension}"/>
 		</antcall>
-		<zip destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.log.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
+		<zip destfile="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.log.zip" basedir="${feature.temp.folder}" filesonly="true" whenempty="skip" update="false"/>
 		<delete dir="${feature.temp.folder}"/>
 	</target>
 
 	<target name="clean" depends="init" description="Clean the feature: com.delegreg.rpgm.feature of all the zips, jars and logs created.">
-		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.jar"/>
-		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.bin.dist.zip"/>
-		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.log.zip"/>
-		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010141341.src.zip"/>
+		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.jar"/>
+		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.bin.dist.zip"/>
+		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.log.zip"/>
+		<delete file="${feature.destination}/com.delegreg.rpgm.feature_0.1.0.201010161559.src.zip"/>
 		<delete dir="${feature.temp.folder}"/>
 		<antcall target="all.children">
 			<param name="target" value="clean"/>
@@ -221,7 +225,7 @@
 	</target>
 
 	<target name="refresh" depends="init" if="eclipse.running" description="Refresh this folder.">
-		<eclipse.convertPath fileSystemPath="C:/workspacegoogle3.5/com.delegreg.rpgm.feature/" property="resourcePath"/>
+		<eclipse.convertPath fileSystemPath="C:/workspace3.6.1/com.delegreg.rpgm.feature/" property="resourcePath"/>
 		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
 		<antcall target="all.children">
 			<param name="target" value="refresh"/>
@@ -230,15 +234,19 @@
 	<target name="gather.sources">
 		<antcall target="children">
 			<param name="target" value="gather.sources"/>
-			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/com.delegreg.rpgm.feature.source_0.1.0.201010141341/src"/>
+			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins/com.delegreg.rpgm.feature.source_0.1.0.201010161559/src"/>
 		</antcall>
 	</target>
 
 	<target name="gather.logs" depends="init">
 		<mkdir dir="${feature.temp.folder}/plugins"/>
 		<property name="destination.temp.folder" value="${feature.temp.folder}/plugins"/>
+		<condition property="logExtension.param" value="logExtension" else="logExtension.param"		>
+			<isset property="logExtension"/>
+		</condition>
 		<antcall target="all.children" inheritAll="false">
 			<param name="target" value="gather.logs"/>
+			<param name="${logExtension.param}" value="${logExtension}"/>
 			<param name="destination.temp.folder" value="${feature.temp.folder}/plugins"/>
 		</antcall>
 	</target>

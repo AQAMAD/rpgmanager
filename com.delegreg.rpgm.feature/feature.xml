@@ -558,14 +558,14 @@ litigation.
          unpack="false"/>
 
    <plugin
-         id="com.delegreg.library.model"
+         id="com.delegreg.rpgm.model"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="com.delegreg.rpgm.model"
+         id="com.delegreg.library"
          download-size="0"
          install-size="0"
          version="0.0.0"
