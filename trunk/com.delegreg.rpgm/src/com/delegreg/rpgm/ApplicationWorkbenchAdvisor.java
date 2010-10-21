@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.preference.PreferenceStore;
 import org.eclipse.swt.widgets.Display;
@@ -86,6 +87,12 @@ public class ApplicationWorkbenchAdvisor extends WorkbenchAdvisor {
 			
 			e.printStackTrace();
 		}
+		//bypass window restoration if no campaigns file
+		if (Application.getCurrentFileName()==null){
+			return new Status(IStatus.CANCEL, Application.PLUGIN_ID, "");
+		}
+		
+		
 		return super.restoreState(memento);
 	}
 

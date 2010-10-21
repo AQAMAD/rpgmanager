@@ -5,6 +5,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -175,11 +176,15 @@ public class EditItemAction extends Action implements ISelectionListener,
 			// Open a view on that file.
 			PDFDocument doc = (PDFDocument) selectedItem;
 			try {
-				PDFDocView view = (PDFDocView) page.showView(PDFDocView.ID, doc
-						.getName(), IWorkbenchPage.VIEW_ACTIVATE);
+				PDFDocView view ;
+				IViewPart p;
+				p=page.showView(PDFDocView.ID, doc.getName(), IWorkbenchPage.VIEW_ACTIVATE);
+				view = (PDFDocView) p;
 				view.openPDF(doc);
 			} catch (PartInitException e) {
 				System.out.println("Open view failed: " + doc.getFileName()); //$NON-NLS-1$
+			} catch (Exception e) {
+				e.printStackTrace(); //$NON-NLS-1$
 			}
 		} else if (selectedItem instanceof PDFDocRessource) {
 			// Open a view on that file.

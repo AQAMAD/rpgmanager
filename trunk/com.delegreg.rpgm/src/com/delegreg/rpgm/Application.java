@@ -196,7 +196,7 @@ public class Application implements IApplication {
 		if (currentFileName!=null){
 			title = title + " - " + currentFileName; //$NON-NLS-1$
 		}else{
-			title = title + " - " + Messages.Campaigns_Filename; //$NON-NLS-1$
+			title = title + " - " + "<Not saved>"; //$NON-NLS-1$
 		}
 		if (dirty){
 			title=title + "*"; //$NON-NLS-1$

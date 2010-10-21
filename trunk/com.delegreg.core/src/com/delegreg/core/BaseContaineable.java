@@ -29,7 +29,6 @@ public abstract class BaseContaineable implements IContaineable {
 		IContainer<? extends IContaineable> root;
 		root=getRoot();
 		if (root!=null){
-			//TODO : fix this 
 			root.fireContentChanged();
 		}
 	}	
