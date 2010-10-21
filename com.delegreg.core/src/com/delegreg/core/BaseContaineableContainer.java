@@ -152,7 +152,6 @@ public abstract class BaseContaineableContainer<V extends IContaineable> extends
 		IContainer<? extends IContaineable> root;
 		root=getRoot();
 		if (root!=null){
-			//TODO : fix this 
 			root.fireContentChanged();
 		}
 	}	
