@@ -11,15 +11,11 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
-import com.delegreg.core.BaseContaineableContainer;
-import com.delegreg.core.BaseContainer;
 import com.delegreg.core.IContaineable;
 import com.delegreg.core.IContainer;
 import com.delegreg.library.model.IDocument;
-import com.delegreg.library.model.Library;
 import com.delegreg.rpgm.Application;
 import com.delegreg.rpgm.Messages;
-import com.delegreg.rpgm.core.DocumentIndexer;
 import com.delegreg.rpgm.core.RpgmRelationalAdapter;
 import com.delegreg.rpgm.ui.IImageKeys;
 import com.delegreg.rpgm.ui.views.CampaignsView;

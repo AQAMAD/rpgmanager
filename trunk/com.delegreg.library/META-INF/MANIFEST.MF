@@ -1,15 +1,24 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
-Bundle-SymbolicName: com.delegreg.library
+Bundle-SymbolicName: com.delegreg.library;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: com.delegreg.library.Activator
 Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.core.runtime,
  com.delegreg.core;bundle-version="0.1.0",
  org.eclipse.swt;bundle-version="3.5.0",
- org.eclipse.jface;bundle-version="3.5.0"
+ org.eclipse.jface;bundle-version="3.5.0",
+ org.eclipse.ui;bundle-version="3.6.1",
+ org.eclipse.ui.forms;bundle-version="3.5.2",
+ com.delegreg.rpgm.lib.jpedal;bundle-version="1.0.1",
+ com.delegreg.rpgm.lib.htmlparser
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.delegreg.library.model,
- com.delegreg.library.ui.wizardpages
+ com.delegreg.library.ui,
+ com.delegreg.library.ui.views,
+ com.delegreg.library.ui.wizardpages,
+ com.delegreg.library.util
+Import-Package: javazoom.jlgui.basicplayer,
+ org.htmlparser

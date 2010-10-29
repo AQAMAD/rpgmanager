@@ -1,28 +1,25 @@
-package com.delegreg.rpgm.ui;
+package com.delegreg.library.ui;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
-import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.ScaleFieldEditor;
-import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 
-import com.delegreg.rpgm.Messages;
-import com.delegreg.rpgm.core.RpgmPreferenceStore;
+import com.delegreg.library.util.LibraryPreferenceStore;
 
-public class GeneralPreferencePage extends FieldEditorPreferencePage implements
+public class LibraryPreferencePage extends FieldEditorPreferencePage implements
 IWorkbenchPreferencePage {
 
-	public GeneralPreferencePage() {
+	public LibraryPreferencePage() {
 		// TODO Auto-generated constructor stub
-		super(Messages.GeneralPreferencePage_PageName,GRID);
-		setDescription(Messages.GeneralPreferencePage_PageDescription);
+		super("Library preferences",GRID);
+		setDescription("These are the preferences used during the library use.");
 	}
 
 
@@ -66,46 +63,34 @@ IWorkbenchPreferencePage {
 		int V_GAP=10;
 
 		addField(new SpacerFieldEditor(getFieldEditorParent(), V_GAP));
-
-		DirectoryFieldEditor cmpEditor = new DirectoryFieldEditor(
-				RpgmPreferenceStore.CAMPAIGNS_DIRECTORY,
-				"Campaigns file directory",
+		
+		DirectoryFieldEditor dirEditor = new DirectoryFieldEditor(
+				LibraryPreferenceStore.LIBRARY_DIRECTORY,
+				"Library base directory",
 				getFieldEditorParent()
 		);
-		addField(cmpEditor);
-
-		BooleanFieldEditor saveLastCampaignsDirectoryEditor = new BooleanFieldEditor(
-				RpgmPreferenceStore.SAVE_CAMPAIGNS_DIRECTORY,
-				"Update Campaigns file directory on Save",
-				getFieldEditorParent()
-		);
-		addField(saveLastCampaignsDirectoryEditor);
+		addField(dirEditor);
 
 		addField(new SpacerFieldEditor(getFieldEditorParent(), V_GAP));
 
-		StringFieldEditor gmNameEditor = new StringFieldEditor(
-				RpgmPreferenceStore.DEFAULT_GM_NAME,
-				Messages.GeneralPreferencePage_DefaultGMName,
+
+		BooleanFieldEditor internalBrowsingEditor = new BooleanFieldEditor(
+				LibraryPreferenceStore.ALLOW_INTERNAL_BROWSING,
+				"Allow internal web browsing (open URLs in internal browser)",
 				getFieldEditorParent()
 		);
-		addField(gmNameEditor);
+		addField(internalBrowsingEditor);
 
-		addField(new SpacerFieldEditor(getFieldEditorParent(), V_GAP));
-
-		BooleanFieldEditor loadLastSavedCampaignsEditor = new BooleanFieldEditor(
-				RpgmPreferenceStore.LOAD_LAST_SAVED_CAMPAIGNS,
-				Messages.GeneralPreferencePage_LoadLastSaved,
-				getFieldEditorParent()
+	 	ScaleFieldEditor hiresPdfEditor = new ScaleFieldEditor(
+	 			LibraryPreferenceStore.HIRES_PDF,
+				"Define PDF Engine precision (high definition PDFs)",
+				getFieldEditorParent(),
+				50,
+				250,
+				5,
+				15
 		);
-		addField(loadLastSavedCampaignsEditor);
-
-		FileFieldEditor lastSavedEditor = new FileFieldEditor(
-				RpgmPreferenceStore.LAST_SAVED_CAMPAIGNS,
-				Messages.GeneralPreferencePage_LastSavedFile,
-				getFieldEditorParent()
-		);
-		addField(lastSavedEditor);
-
+		addField(hiresPdfEditor);
 	}
 
 	public void init(IWorkbench workbench) {

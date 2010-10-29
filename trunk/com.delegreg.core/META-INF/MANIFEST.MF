@@ -6,8 +6,11 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: com.delegreg.core.Activator
 Bundle-Vendor: DELEGREG
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.jface;bundle-version="3.5.0"
+ org.eclipse.jface;bundle-version="3.5.0",
+ org.eclipse.ui;bundle-version="3.6.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.delegreg.core,
+ com.delegreg.core.ui.widgets,
  com.delegreg.core.ui.wizardpages
+Import-Package: org.eclipse.ui.forms.widgets

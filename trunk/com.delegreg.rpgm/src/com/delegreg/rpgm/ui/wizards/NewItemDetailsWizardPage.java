@@ -92,7 +92,7 @@ public class NewItemDetailsWizardPage extends WizardPage  implements INewContain
 		
 		dialog=new FileDialog(container.getShell(),SWT.OPEN);
 		//répertoire par défaut si renseigné
-		String defaultrep=RpgmPreferenceStore.getInstance().getString(RpgmPreferenceStore.LIBRARY_DIRECTORY);
+		String defaultrep=RpgmPreferenceStore.getInstance().getString(RpgmPreferenceStore.WORKSPACE_ROOT_DIRECTORY);
 		if (!defaultrep.equals("")){ //$NON-NLS-1$
 			dialog.setFilterPath(defaultrep); 
 		}
@@ -212,7 +212,7 @@ public class NewItemDetailsWizardPage extends WizardPage  implements INewContain
 				public void widgetSelected(SelectionEvent e) {
 					DirectoryDialog dialog=new DirectoryDialog(container.getShell(),SWT.OPEN);
 					//répertoire par défaut si renseigné
-					String defaultrep=RpgmPreferenceStore.getInstance().getString(RpgmPreferenceStore.LIBRARY_DIRECTORY);
+					String defaultrep=RpgmPreferenceStore.getInstance().getString(RpgmPreferenceStore.WORKSPACE_ROOT_DIRECTORY);
 					if (!defaultrep.equals("")){ //$NON-NLS-1$
 						dialog.setFilterPath(defaultrep); 
 					}

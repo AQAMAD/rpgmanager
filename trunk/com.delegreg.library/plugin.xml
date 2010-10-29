@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            class="com.delegreg.library.ui.views.PDFDocView"
+            icon="icons/elements/pdf.gif"
+            id="com.delegreg.library.views.pdf"
+            name="PDF"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.library.ui.views.HttpDocView"
+            icon="icons/elements/WebPage.png"
+            id="com.delegreg.library.views.http"
+            name="Browser"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.library.ui.views.AudioPlayer"
+            icon="icons/elements/Audio.png"
+            id="com.delegreg.library.views.audio"
+            name="Audio Player"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.library.ui.views.ImageDocView"
+            icon="icons/elements/Image.png"
+            id="com.delegreg.library.views.image"
+            name="Image"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.delegreg.library.ui.views.LibraryView"
+            icon="icons/folders/Libraries.png"
+            id="com.delegreg.library.views.libraries"
+            name="Libraries"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.delegreg.library.ui.LibraryPreferencePage"
+            id="com.delegreg.library.preferences"
+            name="Library Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.delegreg.library.Perspective"
+            icon="icons/folders/Libraries.png"
+            id="com.delegreg.library.perspective"
+            name="Libraries">
+      </perspective>
+   </extension>
+
+</plugin>
