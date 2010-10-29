@@ -14,9 +14,16 @@
    <extension
          point="org.eclipse.ui.perspectives">
       <perspective
-            name="RCP Perspective"
             class="com.delegreg.rpgm.Perspective"
-            id="com.delegreg.rpgm.perspective">
+            icon="icons/elements/Campaign.png"
+            id="com.delegreg.rpgm.perspective"
+            name="Campaigns">
+      </perspective>
+      <perspective
+            class="com.delegreg.rpgm.CompoundPerspective"
+            icon="icons/branding/Folder-Developer-16x16.png"
+            id="com.delegreg.rpgm.compound.perspective"
+            name="Library and game">
       </perspective>
    </extension>
    <extension
@@ -27,38 +34,6 @@
             icon="icons/elements/Campaign.png"
             id="com.delegreg.rpgm.views.campaigns"
             name="Campaigns"
-            restorable="true">
-      </view>
-      <view
-            allowMultiple="true"
-            class="com.delegreg.rpgm.ui.views.PDFDocView"
-            icon="icons/tools/pdfview/smpdf.gif"
-            id="com.delegreg.rpgm.views.pdf"
-            name="PDF"
-            restorable="true">
-      </view>
-      <view
-            allowMultiple="true"
-            class="com.delegreg.rpgm.ui.views.HttpDocView"
-            icon="icons/elements/WebPage.png"
-            id="com.delegreg.rpgm.views.http"
-            name="Browser"
-            restorable="true">
-      </view>
-      <view
-            allowMultiple="true"
-            class="com.delegreg.rpgm.ui.views.AudioPlayer"
-            icon="icons/elements/Audio.png"
-            id="com.delegreg.rpgm.views.audio"
-            name="Audio Player"
-            restorable="true">
-      </view>
-      <view
-            allowMultiple="true"
-            class="com.delegreg.rpgm.ui.views.ImageDocView"
-            icon="icons/elements/Image.png"
-            id="com.delegreg.rpgm.views.image"
-            name="Image"
             restorable="true">
       </view>
    </extension>

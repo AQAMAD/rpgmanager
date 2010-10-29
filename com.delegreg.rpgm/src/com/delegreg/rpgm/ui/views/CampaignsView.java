@@ -50,7 +50,8 @@ import com.delegreg.library.model.Library;
 import com.delegreg.library.model.PDFDocument;
 import com.delegreg.rpgm.Application;
 import com.delegreg.rpgm.Messages;
-import com.delegreg.rpgm.core.DocumentIndexer;
+import com.delegreg.library.ui.LibraryAdapterFactory;
+import com.delegreg.library.util.DocumentIndexer;
 import com.delegreg.rpgm.core.RpgmRelationalAdapter;
 import com.delegreg.rpgm.core.Serializer;
 import com.delegreg.rpgm.model.Actor;
@@ -91,6 +92,7 @@ public class CampaignsView extends ViewPart {
 	}
 
 
+	private IAdapterFactory libAdapterFactory = new LibraryAdapterFactory();
 	private IAdapterFactory adapterFactory = new RPGMAdapterFactory();
 	private IContentListener cListener;
 
@@ -145,10 +147,10 @@ public class CampaignsView extends ViewPart {
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Scenario.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Locations.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Location.class);
-		Platform.getAdapterManager().registerAdapters(adapterFactory, Libraries.class);
-		Platform.getAdapterManager().registerAdapters(adapterFactory, Library.class);
-		Platform.getAdapterManager().registerAdapters(adapterFactory, IDocument.class);
-		Platform.getAdapterManager().registerAdapters(adapterFactory, IDocRessource.class);
+		Platform.getAdapterManager().registerAdapters(libAdapterFactory, Libraries.class);
+		Platform.getAdapterManager().registerAdapters(libAdapterFactory, Library.class);
+		Platform.getAdapterManager().registerAdapters(libAdapterFactory, IDocument.class);
+		Platform.getAdapterManager().registerAdapters(libAdapterFactory, IDocRessource.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Group.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Groups.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Actor.class);

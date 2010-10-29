@@ -20,7 +20,7 @@ import com.delegreg.library.ui.wizardpages.NewLibraryElementPageFactory;
 import com.delegreg.library.ui.wizardpages.NewLibraryItemPage;
 import com.delegreg.rpgm.Application;
 import com.delegreg.rpgm.Messages;
-import com.delegreg.rpgm.core.DocumentIndexer;
+import com.delegreg.library.util.DocumentIndexer;
 import com.delegreg.rpgm.core.RpgmRelationalAdapter;
 import com.delegreg.rpgm.ui.IImageKeys;
 

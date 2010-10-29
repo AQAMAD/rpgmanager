@@ -34,6 +34,7 @@ import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
+import com.delegreg.core.ui.widgets.ImageCanvas;
 import com.delegreg.library.model.IMapAble;
 import com.delegreg.rpgm.Application;
 import com.delegreg.rpgm.Messages;
@@ -52,7 +53,7 @@ import com.delegreg.rpgm.ui.actions.EditItemAction;
  * 
  * @author Chengdong Li: cli4@uky.edu
  */
-public class MapImageCanvas extends RpgmImageCanvas {
+public class MapImageCanvas extends ImageCanvas {
 
 	private ArrayList<ImageHyperlink> locations;
 	
