@@ -11,7 +11,7 @@ Note that as of October 13th 2010 RPGM is now officially open-source and welcome
 = But what is it ? =
 
 RPGM will be (it's not functionnal yet) : 
- * A documentation management system, allowing you to store your core rules, campaigns scenarios, maps, characters,  in several widely available formats (PDF, web, rtf and doc are planned too)
+ * A [documentation management system], allowing you to store your core rules, campaigns scenarios, maps, characters,  in several widely available formats (PDF, web, rtf and doc are planned too)
  * A campaign organisation tool. Use your documentation to complement the structure of your campaign. Gain quick access to  the content you need, when you need it. Sequence the events in your scenarios, structure the locations your PCs will visit and organise your NPCs and encounters in groups and subgroups.
  * A campaign building aid. Start little, then build up. Create a group of actors and reuse them throughout your campaign. Create a scenario and add chapters, sequences, link maps, describe how your story will unfold.
  * (Not implemented yet) An audio ressource management system. Associate audio ressources with your scenario parts, so you have easy access to it whenever you need your PCs to hear them
