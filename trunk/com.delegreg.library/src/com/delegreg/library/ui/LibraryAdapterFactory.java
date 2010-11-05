@@ -42,6 +42,8 @@ public class LibraryAdapterFactory implements IAdapterFactory {
 			return libraryAdapter;
 		if(adapterType == IWorkbenchAdapter.class && adaptableObject instanceof Libraries)
 			return librariesAdapter;
+		if(adapterType == IWorkbenchAdapter.class && adaptableObject instanceof Libraries[])
+			return librariesArrayAdapter;
 		if(adapterType == IWorkbenchAdapter.class && adaptableObject instanceof IDocument)
 			return documentAdapter;
 		if(adapterType == IWorkbenchAdapter.class && adaptableObject instanceof IDocRessource)
@@ -93,6 +95,24 @@ public class LibraryAdapterFactory implements IAdapterFactory {
 		public Object[] getChildren(Object o) {
 			Libraries entry = ((Libraries)o);
 			return entry.toArray();
+		}
+	};
+
+	/** The libraries Array adapter. */
+	private IWorkbenchAdapter librariesArrayAdapter = new IWorkbenchAdapter() {
+		public Object getParent(Object o) {
+			return null;
+		}
+		public String getLabel(Object o) {
+			return ""; //$NON-NLS-2$
+		}
+		public ImageDescriptor getImageDescriptor(Object object) {
+			return null;
+		}
+
+		public Object[] getChildren(Object o) {
+			Libraries[] entry = ((Libraries[])o);
+			return entry;
 		}
 	};
 

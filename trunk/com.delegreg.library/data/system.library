@@ -1,0 +1,23 @@
+  <libraries>
+    <internal>
+      <library>
+        <internal>
+          <httpdocument>
+            <internal/>
+            <name>Library plugin</name>
+            <container class="library" reference="../../.."/>
+            <url>http://code.google.com/p/rpgmanager/wiki/Library</url>
+          </httpdocument>
+        </internal>
+        <name>About the libraries</name>
+        <container class="libraries" reference="../../.."/>
+        <subLibraries>
+          <internal/>
+          <name>Bibliothèques</name>
+          <container class="library" reference="../.."/>
+        </subLibraries>
+        <folder></folder>
+      </library>
+    </internal>
+    <name>Libraries information</name>
+  </libraries>

@@ -1,14 +1,23 @@
 package com.delegreg.library.ui.views;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IAdapterFactory;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
@@ -37,10 +46,14 @@ import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 
 import com.delegreg.core.BaseContaineableContainer;
 import com.delegreg.core.IContaineable;
 import com.delegreg.core.IContentListener;
+import com.delegreg.core.util.Serializer;
+import com.delegreg.library.Activator;
 import com.delegreg.library.model.AudioDocument;
 import com.delegreg.library.model.IDocRessource;
 import com.delegreg.library.model.IDocument;
@@ -50,12 +63,13 @@ import com.delegreg.library.model.Library;
 import com.delegreg.library.model.PDFDocument;
 import com.delegreg.library.ui.LibraryAdapterFactory;
 import com.delegreg.library.util.DocumentIndexer;
+import com.delegreg.library.util.LibrarySerializer;
 
 
 public class LibraryView extends ViewPart {
 	public static final String ID = "com.delegreg.library.views.libraries"; //$NON-NLS-1$
 	private TreeViewer treeViewer;
-	private Libraries libraries;
+	private Libraries[] model;
 //	private EditItemAction editAction;
 //	private RenameItemAction renameAction;
 //	private NewItemAction newAction;
@@ -65,8 +79,8 @@ public class LibraryView extends ViewPart {
 	/**
 	 * @return the campaigns
 	 */
-	public Libraries getLibraries() {
-		return libraries;
+	public Libraries[] getLibraries() {
+		return model;
 	}
 
 
@@ -113,10 +127,8 @@ public class LibraryView extends ViewPart {
 		//initializeCampaigns(); // temporary tweak to build a fake model
 		//'récupérer la campagne via le preferencestore'
 		
-		
 		//libraries=Application.getCurrentCampaigns();
-		libraries=new Libraries(null);
-		
+		model=Libraries.getRegisteredLibraries();
 		
 		//MultipleText mt=new MultipleText(parent,SWT.BORDER);
 		
@@ -125,6 +137,7 @@ public class LibraryView extends ViewPart {
 		Platform.getAdapterManager().registerAdapters(adapterFactory, Library.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, IDocument.class);
 		Platform.getAdapterManager().registerAdapters(adapterFactory, IDocRessource.class);
+		Platform.getAdapterManager().registerAdapters(adapterFactory, Libraries[].class);
 		getSite().setSelectionProvider(treeViewer);
 		treeViewer.setLabelProvider(new WorkbenchLabelProvider());
 		treeViewer.setContentProvider(new BaseWorkbenchContentProvider());
@@ -175,7 +188,7 @@ public class LibraryView extends ViewPart {
 //			@Override
 //			public void dragSetData(DragSourceEvent event) {
 //				//deux cas, un objet simple ou multiple
-////				event.data = Serializer.getInstance().toXML(dragList);
+////				event.data = LibrarySerializer.getInstance().toXML(dragList);
 //				super.dragSetData(event);
 //			}
 //
@@ -326,7 +339,7 @@ public class LibraryView extends ViewPart {
 //					TreeItem dropitem = (TreeItem)event.item;
 //					BaseContaineableContainer parent=(BaseContaineableContainer) dropitem.getData();
 //					RpgmRelationalAdapter adapter=new RpgmRelationalAdapter(parent);
-//					ArrayList<IContaineable> items = (ArrayList<IContaineable>) Serializer.getInstance().fromXML((String) event.data);
+//					ArrayList<IContaineable> items = (ArrayList<IContaineable>) LibrarySerializer.getInstance().fromXML((String) event.data);
 //					for (Iterator<IContaineable> iterator = items.iterator(); iterator.hasNext();) {
 //						IContaineable item = (IContaineable) iterator.next();
 //						if (adapter.doesImportSubItem(item)){
@@ -342,7 +355,7 @@ public class LibraryView extends ViewPart {
 //					TreeItem dropitem = (TreeItem)event.item;
 //					BaseContaineableContainer parent=(BaseContaineableContainer) dropitem.getData();
 //					RpgmRelationalAdapter adapter=new RpgmRelationalAdapter(parent);
-//					ArrayList<IContaineable> items = (ArrayList<IContaineable>) Serializer.getInstance().fromXML((String) event.data);
+//					ArrayList<IContaineable> items = (ArrayList<IContaineable>) LibrarySerializer.getInstance().fromXML((String) event.data);
 //					for (Iterator<IContaineable> iterator = items.iterator(); iterator.hasNext();) {
 //						IContaineable item = (IContaineable) iterator.next();
 //						if (adapter.doesAcceptSubItem(item)){
@@ -361,15 +374,17 @@ public class LibraryView extends ViewPart {
 //	    });
 
 		
-		treeViewer.setInput(libraries);
+		treeViewer.setInput(model);
 
 		cListener = new IContentListener() {
 			public void contentChanged() {
 				treeViewer.refresh();
 			}
 		};
-		libraries.addContentListener(cListener);
-
+		for (int i = 0; i < model.length; i++) {
+			Libraries lib=model[i];
+			lib.addContentListener(cListener);
+		}
 		
 		
 		makeActions();
@@ -387,19 +402,28 @@ public class LibraryView extends ViewPart {
 
 
 	public void dispose() {
-		libraries.removeContentListener(cListener);
+		for (int i = 0; i < model.length; i++) {
+			Libraries lib=model[i];
+			lib.removeContentListener(cListener);
+		}
 		Platform.getAdapterManager().unregisterAdapters(adapterFactory);
 		super.dispose();
 	}
 
-	public void setLibraries(Libraries newRoot) {
+	public void setLibraries(Libraries[] newRoot) {
 		try {
-			if (libraries!=null){
-					libraries.removeContentListener(cListener);
+			if (model!=null){
+				for (int i = 0; i < model.length; i++) {
+					Libraries lib=model[i];
+					lib.removeContentListener(cListener);
+				}
 			}
-			libraries=newRoot;
-			libraries.addContentListener(cListener);
-			treeViewer.setInput(libraries);
+			model=newRoot;
+			for (int i = 0; i < model.length; i++) {
+				Libraries lib=model[i];
+				lib.addContentListener(cListener);
+			}
+			treeViewer.setInput(model);
 			treeViewer.refresh();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -542,5 +566,6 @@ public class LibraryView extends ViewPart {
 		}
 	}
 
-
+    
+    
 }
