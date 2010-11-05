@@ -16,6 +16,40 @@ public class Messages extends NLS {
 	public static String WizardPage_ChosenItemType;
 	public static String WizardPage_WillBeAddedTo;
 	public static String WizardPage_Name;
+	public static String DeleteItemAction_Name;
+	public static String DeleteItemAction_ToolTip;
+	public static String EditItemAction_Name;
+	public static String EditItemAction_Tooltip;
+	public static String ExportItemAction_Name;
+	public static String ExportItemAction_Tooltip;
+	public static String ExportItemAction_OverWrite;
+	public static String ExportItemAction_ErrorMessage;
+	public static String ExportItemAction_ErrorTitle;
+	public static String ExportItemAction_DialogMessage;
+	public static String ExportItemAction_DialogTitle;
+	public static String ExportItemAction_Cancel;
+	public static String ImportItemAction_Name;
+	public static String ImportItemAction_Tooltip;
+	public static String ImportItemAction_Add;
+	public static String ImportItemAction_Import;
+	public static String ImportItemAction_ErrorTitle;
+	public static String ImportItemAction_ErrorMessage;
+	public static String ImportItemAction_DialogTitle;
+	public static String ImportItemAction_AlternateDialogMessage;
+	public static String ImportItemAction_Cancel;
+	public static String ImportItemAction_DialogMessage;
+	public static String RenameItemAction_Name;
+	public static String RenameItemAction_Tooltip;
+	public static String RenameItemAction_ErrorMessage;
+	public static String RenameItemAction_DialogMessage;
+	public static String RenameItemAction_DialogTitle;
+	public static String SolidifyAction_Name;
+	public static String SolidifyAction_Tooltip;
+	public static String SolidifyAction_ErrorMessage;
+	public static String SolidifyAction_ErrorTitle;
+	public static String NewItemAction_Name;
+	public static String NewItemAction_ToolTip;
+	
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

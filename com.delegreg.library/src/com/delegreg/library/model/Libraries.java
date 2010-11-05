@@ -1,7 +1,6 @@
 package com.delegreg.library.model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import com.delegreg.core.BaseContaineableContainer;
 import com.delegreg.core.IContaineable;
