@@ -1,104 +1,138 @@
 <project name="com.delegreg.rpgm" default="build">
-	<!--sets the path of the properties file-->
-	<property file="build.properties" />
-	<property name="workspacelocation" value="${basedir}../" />
-	<property name="builderlocation" value="${workspacelocation}com.delegreg.rpgm.builder" />
+    <!--sets the path of the properties file-->
+    <property file="build.properties" />
+    <property name="workspacelocation" value="${basedir}../" />
+    <property name="builderlocation" value="${workspacelocation}com.delegreg.rpgm.builder" />
 
-	<target name="clean">
-		<delete dir="${buildDirectory}" failonerror="false"/>
-	</target>
+    <target name="clean">
+        <delete dir="${buildDirectory}" failonerror="false"/>
+    </target>
 
-	<target name="init">
-		<mkdir dir="${buildDirectory}" />
-		<mkdir dir="${buildDirectory}/plugins" />
-		<mkdir dir="${buildDirectory}/features" />
-		<copy todir="${buildDirectory}/plugins">
-			<fileset dir="${workspacelocation}">
-				<include name="com.delegreg.rpgm/**" />
-				<include name="com.delegreg.rpgm.product/**" />
-				<include name="com.delegreg.rpgm.help/**" />
-				<include name="com.delegreg.rpgm.lib.javazoom/**" />
-				<include name="com.delegreg.rpgm.lib.htmlparser/**" />
-				<include name="com.delegreg.rpgm.lib.jpedal/**" />
-				<include name="com.delegreg.rpgm.lib.xstream/**" />
-				<include name="net.jonbuck.texteditor/**" />
-				<include name="net.jonbuck.texteditor.nl/**" />
-				<include name="org.apache.commons.lang/**" />
-			</fileset>
-		</copy>
-		<copy todir="${buildDirectory}/features">
-			<fileset dir="${workspacelocation}">
-				<include name="com.delegreg.rpgm.feature/**" />
-			</fileset>
-		</copy>
-	</target>
+    <target name="init">
+        <mkdir dir="${buildDirectory}" />
+        <mkdir dir="${buildDirectory}/plugins" />
+        <mkdir dir="${buildDirectory}/features" />
+        <copy todir="${buildDirectory}/plugins">
+            <fileset dir="${workspacelocation}">
+                <include name="com.delegreg.rpgm/**" />
+                <include name="com.delegreg.rpgm.product/**" />
+                <include name="com.delegreg.rpgm.help/**" />
+                <include name="com.delegreg.rpgm.lib.javazoom/**" />
+                <include name="com.delegreg.rpgm.lib.htmlparser/**" />
+                <include name="com.delegreg.rpgm.lib.jpedal/**" />
+                <include name="com.delegreg.rpgm.lib.xstream/**" />
+                <include name="net.jonbuck.texteditor/**" />
+                <include name="net.jonbuck.texteditor.nl/**" />
+                <include name="org.apache.commons.lang/**" />
+            </fileset>
+        </copy>
+        <copy todir="${buildDirectory}/features">
+            <fileset dir="${workspacelocation}">
+                <include name="com.delegreg.rpgm.feature/**" />
+            </fileset>
+        </copy>
+    </target>
 
 
-	<!--
-		This target actually executes the PDE Build process by launching the 
-		Eclipse antRunner application.
-	-->
-	<target name="pde-build">
-		
-		<property name="baseLocation" value="${eclipse.home}"/>
-		<!-- by default, check for deltapack co-located with eclipse -->
-		<property name="deltapack" value="${eclipse.home}\deltapack"/>
+    <!--
+        This target actually executes the PDE Build process by launching the 
+        Eclipse antRunner application.
+    -->
+    <target name="pde-build">
+        
+        <property name="baseLocation" value="${eclipse.home}"/>
+        <!-- by default, check for deltapack co-located with eclipse -->
+        <property name="deltapack" value="${eclipse.home}\deltapack"/>
 
-		<!-- Check that we have a deltapack -->
-		<available property="haveDeltaPack" file="${deltapack}"/>
-		<fail unless="haveDeltaPack" message="The deltapack is required to build this product.  Please edit buildProduct.xml or set the &quot;deltapack&quot; property." />
+        <!-- Check that we have a deltapack -->
+        <available property="haveDeltaPack" file="${deltapack}"/>
+        <fail unless="haveDeltaPack" message="The deltapack is required to build this product.  Please edit buildProduct.xml or set the &quot;deltapack&quot; property." />
 
-		<property name="builder" value="${basedir}" />
-		<property name="buildDirectory" value="${basedir}/buildDirectory"/>
-		<property name="pluginPath" value="${basedir}/..${path.separator}${deltapack}" />
-		<property name="buildTempFolder" value="${buildDirectory}" />
+        <property name="builder" value="${basedir}" />
+        <property name="buildDirectory" value="${basedir}/buildDirectory"/>
+        <property name="pluginPath" value="${basedir}/..${path.separator}${deltapack}" />
+        <property name="buildTempFolder" value="${buildDirectory}" />
 
-		<ant antfile="${eclipse.pdebuild.scripts}/productBuild/productBuild.xml" />
+        <ant antfile="${eclipse.pdebuild.scripts}/productBuild/productBuild.xml" />
 
-		<!-- refresh the workspace -->
-		<eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
-		<eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
-	</target>
+        <!-- refresh the workspace -->
+        <eclipse.convertPath fileSystemPath="${basedir}" property="resourcePath"/>
+        <eclipse.refreshLocal resource="${resourcePath}" depth="infinite"/>
+    </target>
 
-	<fileset id="results" dir="${buildDirectory}/${buildLabel}">
-		<include name="*.zip" />
-	</fileset>
+    <fileset id="results" dir="${buildDirectory}/${buildLabel}">
+        <include name="*.zip" />
+    </fileset>
 
-	<target name="deploy">
-		<tstamp prefix="build"/>
-		<move todir="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}">
-			<fileset refid="results" />
-		</move>
-		<move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
-			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
-		<move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
-			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>		
-		<move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
-			tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>		
-	</target>
-	
-	<target name="night">
-		<tstamp prefix="build"/>
-		<move todir="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}">
-			<fileset refid="results" />
-		</move>
-		<move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
-			tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
-		<move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
-			tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>		
-		<move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
-			tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>		
-	</target>
+    <target name="deploy">
+        <tstamp prefix="build"/>
+        <move todir="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}">
+            <fileset refid="results" />
+        </move>
+        <move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
+            tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
+        <move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
+            tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>     
+        <move file="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
+            tofile="${buildDirectory}/../previousbuilds/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>       
+        <fileset id="stableset" dir="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}">
+            <include name="*.zip" />
+        </fileset>
+        <ftp password="41864806u" server="delegreg.fr" userid="u60846814" 
+            remotedir="/rpgm/stable/${build.DSTAMP}${build.TSTAMP}/" action="mkdir"
+            verbose="true">
+        </ftp>
+        <ftp password="41864806u" server="delegreg.fr" userid="u60846814" 
+            remotedir="/rpgm/stable/${build.DSTAMP}${build.TSTAMP}/" action="send"
+            verbose="true">
+            <fileset refid="stableset" />
+        </ftp>
+    </target>
+    
+    <target name="night">
+        <tstamp prefix="build"/>
+        <copy todir="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}">
+            <fileset refid="results" />
+        </copy>
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x64.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Win64.zip"/>
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>        
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>
+        <fileset id="nightlyset" dir="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}">
+            <include name="*.zip" />
+        </fileset>
+        <ftp password="41864806u" server="delegreg.fr" userid="u60846814" 
+            remotedir="/rpgm/nightly/${build.DSTAMP}${build.TSTAMP}/" action="mkdir"
+            verbose="true">
+        </ftp>
+        <ftp password="41864806u" server="delegreg.fr" userid="u60846814" 
+            remotedir="/rpgm/nightly/${build.DSTAMP}${build.TSTAMP}/" action="send"
+            verbose="true">
+            <fileset refid="nightlyset" />
+        </ftp>
+    </target>
 
-	<target name="ftp">
-		<ftp password="jester" server="delegreg.com" userid="toto" 
-			remotedir="/web/rpgm/" action="send"
-			verbose="true">
-			<fileset refid="results" />
-		</ftp>
-	</target>		
-	
-	<!--This target defines the run-order of the targets-->
-	<target name="build" depends="clean, init, pde-build, deploy" />
-	<target name="nightly" depends="clean, init, pde-build, night" />
+    <target name="local">
+        <tstamp prefix="build"/>
+        <copy todir="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}">
+            <fileset refid="results" />
+        </copy>
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x86.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Windows.zip"/>
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-win32.win32.x64.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Win64.zip"/>
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-macosx.carbon.x86.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Mac.zip"/>        
+        <move file="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM-linux.gtk.x86.zip" 
+            tofile="${buildDirectory}/../nightly/products/${build.DSTAMP}${build.TSTAMP}/RPGM4Linux.zip"/>
+    </target>
+
+    <!--This target defines the run-order of the targets-->
+    <target name="build" depends="clean, init, pde-build, deploy" />
+    <target name="nightly" depends="clean, init, pde-build, night" />
+    <target name="testing" depends="clean, init, pde-build, local" />
 </project>
