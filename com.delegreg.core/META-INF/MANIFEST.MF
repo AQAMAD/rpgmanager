@@ -12,5 +12,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.delegreg.core,
  com.delegreg.core.ui.widgets,
- com.delegreg.core.ui.wizardpages
-Import-Package: org.eclipse.ui.forms.widgets
+ com.delegreg.core.ui.wizardpages,
+ com.delegreg.core.util
+Import-Package: com.thoughtworks.xstream,
+ com.thoughtworks.xstream.core.util,
+ com.thoughtworks.xstream.io.xml,
+ org.eclipse.ui.forms.widgets
