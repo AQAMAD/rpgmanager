@@ -20,6 +20,8 @@ RPGM will be (it's not functionnal yet) :
 
 Well, you might want to have a look at the [http://code.google.com/p/rpgmanager/downloads/list Downloads] section to grab the latest stable RPGM version.
 
+(Unstable versions are available at the [http://delegreg.fr/rpgm Binaries depot], use at your own risk though, these will certainly have bugs and will most probably not be compatible with your user files)
+
 If you have trouble running RPGM, have a look at the [Install] page where you will find a detailed tutorial on how to download and install RPGM on your system.
 
 If you successfully started RPGM and still don't know what you're doing, check the [Tutorials] page.
