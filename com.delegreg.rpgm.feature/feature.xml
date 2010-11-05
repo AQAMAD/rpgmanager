@@ -8,7 +8,7 @@
       os="macosx,win32"
       ws="carbon,win32"
       nl="en,fr"
-      arch="x86">
+      arch="x86,x86_64">
 
    <description url="http://www.delegreg.com/rpgm">
       RPGM will be (it&apos;s not functionnal yet) : 
@@ -229,8 +229,8 @@ litigation.
    </license>
 
    <url>
-      <update label="Delegreg&apos;s web site" url="http://www.delegreg.com/rpgm/update"/>
-      <discovery label="It&apos;s really cool !" url="http://www.delegreg.com"/>
+      <update label="Delegreg&apos;s web site" url="http://delegreg.fr/rpgm/site"/>
+      <discovery label="It&apos;s really cool !" url="http://delegreg.fr"/>
    </url>
 
    <includes
