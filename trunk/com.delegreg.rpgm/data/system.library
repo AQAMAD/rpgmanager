@@ -1,0 +1,48 @@
+  <libraries>
+    <internal>
+      <library>
+        <internal>
+          <httpdocument>
+            <internal>
+              <httpdocressource>
+                <internal/>
+                <name>Project Home</name>
+                <container class="httpdocument" reference="../../.."/>
+                <url>http://code.google.com/p/rpgmanager/</url>
+              </httpdocressource>
+              <httpdocressource>
+                <internal/>
+                <name>Downloads</name>
+                <container class="httpdocument" reference="../../.."/>
+                <url>http://code.google.com/p/rpgmanager/downloads/list</url>
+              </httpdocressource>
+              <httpdocressource>
+                <internal/>
+                <name>Wiki</name>
+                <container class="httpdocument" reference="../../.."/>
+                <url>http://code.google.com/p/rpgmanager/w/list</url>
+              </httpdocressource>
+              <httpdocressource>
+                <internal/>
+                <name>Issues</name>
+                <container class="httpdocument" reference="../../.."/>
+                <url>http://code.google.com/p/rpgmanager/issues/list</url>
+              </httpdocressource>
+            </internal>
+            <name>RPGM Project site on Google Code</name>
+            <container class="library" reference="../../.."/>
+            <url>http://code.google.com/p/rpgmanager</url>
+          </httpdocument>
+        </internal>
+        <name>RPGM Links</name>
+        <container class="libraries" reference="../../.."/>
+        <subLibraries>
+          <internal/>
+          <name>Bibliothèques</name>
+          <container class="library" reference="../.."/>
+        </subLibraries>
+        <folder></folder>
+      </library>
+    </internal>
+    <name>RPGM informations</name>
+  </libraries>

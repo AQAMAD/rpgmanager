@@ -16,13 +16,11 @@ Require-Bundle: org.eclipse.core.runtime,
  net.jonbuck.texteditor;bundle-version="1.0.0",
  org.eclipse.update.ui;bundle-version="3.2.101",
  org.eclipse.update.core;bundle-version="3.2.202",
- com.delegreg.rpgm.lib.javazoom;bundle-version="1.0.0",
- com.delegreg.rpgm.lib.htmlparser;bundle-version="1.0.0",
- com.delegreg.rpgm.lib.jpedal;bundle-version="1.0.0",
- com.delegreg.rpgm.lib.xstream;bundle-version="1.0.0",
  com.delegreg.rpgm.model;bundle-version="0.1.0",
  com.delegreg.core;bundle-version="0.1.0",
- com.delegreg.library;bundle-version="0.1.0"
+ com.delegreg.library;bundle-version="0.1.0",
+ com.delegreg.rpgm.lib.javazoom;bundle-version="1.0.1",
+ com.delegreg.rpgm.lib.xstream;bundle-version="1.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: .
 Eclipse-BuddyPolicy: registered

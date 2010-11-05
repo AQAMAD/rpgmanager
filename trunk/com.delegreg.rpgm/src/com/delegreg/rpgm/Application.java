@@ -1,8 +1,16 @@
 package com.delegreg.rpgm;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
@@ -16,9 +24,14 @@ import org.eclipse.ui.IViewReference;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.internal.util.BundleUtility;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.osgi.framework.Bundle;
 
+import com.delegreg.core.AbstractActivator;
 import com.delegreg.core.IContentListener;
+import com.delegreg.library.model.Libraries;
+import com.delegreg.library.util.LibrarySerializer;
 import com.delegreg.rpgm.model.Campaigns;
 import com.delegreg.rpgm.statblocks.DefaultStatBlock;
 import com.delegreg.rpgm.statblocks.ui.DefaultStatBlockDetailsPage;
@@ -63,6 +76,11 @@ public class Application implements IApplication {
 	public Object start(IApplicationContext context) throws Exception {
 		Display display = PlatformUI.createDisplay();
 		try {
+
+			String xml=readStringFromPluginFile("data/system.library");
+			Libraries sys=(Libraries) LibrarySerializer.getInstance().fromXML(xml);
+			Libraries.registerLibraries(sys);			
+			
 			currentCampaigns=new Campaigns();
 			currentCampaigns.addContentListener(cl);
 
@@ -247,5 +265,39 @@ public class Application implements IApplication {
 	 */
 	public static HashMap<Class, Class> getStatBlocks() {
 		return statBlocks;
+	}
+	
+	public String readStringFromPluginFile(String filePath){
+		IPath path=new Path(filePath);
+		
+		 // if the bundle is not ready then there is no image
+        Bundle bundle = Platform.getBundle(PLUGIN_ID);
+        if (!BundleUtility.isReady(bundle)) {
+			return null;
+		}
+
+        // look for the image (this will check both the plugin and fragment folders
+        URL fullPathString = BundleUtility.find(bundle, path.toString());
+        if (fullPathString == null) {
+            try {
+                fullPathString = new URL(path.toString());
+            } catch (MalformedURLException e) {
+                return null;
+            }
+        }
+        InputStream stream;
+        StringBuilder sb=new StringBuilder();
+		try {
+			stream = FileLocator.openStream(bundle,path,false);
+	        BufferedReader in = new BufferedReader(new InputStreamReader(stream));
+	        for (String s = in.readLine();s != null;s=in.readLine()) {
+	        	sb.append(s);
+	        }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        return sb.toString();
 	}
 }
