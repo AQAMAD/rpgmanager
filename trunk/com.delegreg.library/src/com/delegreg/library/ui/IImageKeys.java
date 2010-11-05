@@ -37,5 +37,11 @@ public interface IImageKeys {
 
 	public static final String IMAGES = "icons/folders/Images.png";
 	public static final String DELETEITEM = "icons/actions/Delete.png";
+	public static final String EDITITEM = null;
+	public static final String EXPORT = null;
+	public static final String IMPORT = null;
+	public static final String RENAME = null;
+	public static final String SOLIDIFY = null;
+	public static final String NEWITEM = null;
 	
 }
