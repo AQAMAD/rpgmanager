@@ -20,6 +20,10 @@ import com.delegreg.library.model.HttpDocument;
 import com.delegreg.library.model.ImageDocument;
 import com.delegreg.library.model.PDFDocRessource;
 import com.delegreg.library.model.PDFDocument;
+import com.delegreg.library.ui.views.AudioPlayer;
+import com.delegreg.library.ui.views.HttpDocView;
+import com.delegreg.library.ui.views.ImageDocView;
+import com.delegreg.library.ui.views.PDFDocView;
 import com.delegreg.rpgm.Application;
 import com.delegreg.rpgm.Messages;
 import com.delegreg.rpgm.model.Actor;
@@ -34,10 +38,6 @@ import com.delegreg.rpgm.ui.editors.EditorInputFactory;
 import com.delegreg.rpgm.ui.editors.LocationEditor;
 import com.delegreg.rpgm.ui.editors.ScenarioEditor;
 import com.delegreg.rpgm.ui.editors.SequenceEditor;
-import com.delegreg.library.ui.views.AudioPlayer;
-import com.delegreg.library.ui.views.HttpDocView;
-import com.delegreg.library.ui.views.ImageDocView;
-import com.delegreg.library.ui.views.PDFDocView;
 
 public class EditItemAction extends Action implements ISelectionListener,
 		IWorkbenchAction {
