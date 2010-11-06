@@ -19,6 +19,10 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
+import org.eclipse.jface.action.IContributionManager;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
@@ -42,6 +46,7 @@ import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.TreeItem;
+import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.model.BaseWorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
@@ -62,6 +67,12 @@ import com.delegreg.library.model.Libraries;
 import com.delegreg.library.model.Library;
 import com.delegreg.library.model.PDFDocument;
 import com.delegreg.library.ui.LibraryAdapterFactory;
+import com.delegreg.library.ui.actions.DeleteItemAction;
+import com.delegreg.library.ui.actions.EditItemAction;
+import com.delegreg.library.ui.actions.ExportItemAction;
+import com.delegreg.library.ui.actions.ImportItemAction;
+import com.delegreg.library.ui.actions.NewItemAction;
+import com.delegreg.library.ui.actions.RenameItemAction;
 import com.delegreg.library.util.DocumentIndexer;
 import com.delegreg.library.util.LibrarySerializer;
 
@@ -70,12 +81,12 @@ public class LibraryView extends ViewPart {
 	public static final String ID = "com.delegreg.library.views.libraries"; //$NON-NLS-1$
 	private TreeViewer treeViewer;
 	private Libraries[] model;
-//	private EditItemAction editAction;
-//	private RenameItemAction renameAction;
-//	private NewItemAction newAction;
-//	private DeleteItemAction deleteAction;
-//	private ImportItemAction importAction;
-//	private ExportItemAction exportAction;
+	private EditItemAction editAction;
+	private RenameItemAction renameAction;
+	private NewItemAction newAction;
+	private DeleteItemAction deleteAction;
+	private ImportItemAction importAction;
+	private ExportItemAction exportAction;
 	/**
 	 * @return the campaigns
 	 */
@@ -92,42 +103,17 @@ public class LibraryView extends ViewPart {
 
 	
 	private void makeActions() {
-//		  editAction = new EditItemAction(getSite().getWorkbenchWindow());
-//		  newAction = new NewItemAction(getSite().getWorkbenchWindow());
-//		  renameAction = new RenameItemAction(getSite().getWorkbenchWindow());
-//		  deleteAction = new DeleteItemAction(getSite().getWorkbenchWindow());
-//		  importAction = new ImportItemAction(getSite().getWorkbenchWindow());
-//		  exportAction = new ExportItemAction(getSite().getWorkbenchWindow());
+		  editAction = new EditItemAction(getSite().getWorkbenchWindow());
+		  newAction = new NewItemAction(getSite().getWorkbenchWindow());
+		  renameAction = new RenameItemAction(getSite().getWorkbenchWindow());
+		  deleteAction = new DeleteItemAction(getSite().getWorkbenchWindow());
+		  importAction = new ImportItemAction(getSite().getWorkbenchWindow());
+		  exportAction = new ExportItemAction(getSite().getWorkbenchWindow());
 
-		  // edit an item on double click.
-		  treeViewer.addDoubleClickListener(new IDoubleClickListener() {
-		    public void doubleClick(DoubleClickEvent event) {
-//		      editAction.run();
-		    }
-		  });
-
-		    
-		  // Create the context menu and register it with the Workbench.
-		  MenuManager menuMgr = new MenuManager("librariesPopup"); //$NON-NLS-1$
-//		  menuMgr.add(newAction);
-//		  menuMgr.add(editAction);
-//		  menuMgr.add(renameAction);
-//		  menuMgr.add(deleteAction);
-//		  menuMgr.add(new Separator());
-//		  menuMgr.add(importAction);
-//		  menuMgr.add(exportAction);
-		  menuMgr.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
-		  Menu menu = menuMgr.createContextMenu(treeViewer.getControl());
-		  treeViewer.getControl().setMenu(menu);
-		  getSite().registerContextMenu(menuMgr, treeViewer);
 		}	
 	
 	@Override
 	public void createPartControl(Composite parent) {
-		//initializeCampaigns(); // temporary tweak to build a fake model
-		//'récupérer la campagne via le preferencestore'
-		
-		//libraries=Application.getCurrentCampaigns();
 		model=Libraries.getRegisteredLibraries();
 		
 		//MultipleText mt=new MultipleText(parent,SWT.BORDER);
@@ -388,7 +374,68 @@ public class LibraryView extends ViewPart {
 		
 		
 		makeActions();
+		hookContextMenu();
+		hookDoubleClickAction();
+		contributeToActionBars();
+		
 	}
+
+	private void hookDoubleClickAction() {
+		  // edit an item on double click.
+		  treeViewer.addDoubleClickListener(new IDoubleClickListener() {
+		    public void doubleClick(DoubleClickEvent event) {
+		      editAction.run();
+		    }
+		  });
+	}
+	
+	
+	private void hookContextMenu() {
+		MenuManager menuMgr = new MenuManager("#PopupMenu"); //$NON-NLS-1$
+		menuMgr.setRemoveAllWhenShown(true);
+		menuMgr.addMenuListener(new IMenuListener() {
+			public void menuAboutToShow(IMenuManager manager) {
+				LibraryView.this.fillContextMenu(manager);
+			}
+		});
+		Menu menu = menuMgr.createContextMenu(treeViewer.getControl());
+		treeViewer.getControl().setMenu(menu);
+		getSite().registerContextMenu(menuMgr, treeViewer);
+	}
+
+	private void contributeToActionBars() {
+		IActionBars bars = getViewSite().getActionBars();
+		fillLocalPullDown(bars.getMenuManager());
+		fillLocalToolBar(bars.getToolBarManager());
+	}
+
+	/*
+	 * fill any object with action buttons
+	 */
+	private void fillMenu(IContributionManager manager) {
+		  manager.add(newAction);
+		  manager.add(editAction);
+		  manager.add(renameAction);
+		  manager.add(deleteAction);
+		  manager.add(new Separator());
+		  manager.add(importAction);
+		  manager.add(exportAction);
+		
+	}
+	private void fillLocalPullDown(IContributionManager manager) {
+		fillMenu( manager);
+	}
+
+	private void fillContextMenu(IMenuManager manager) {
+		fillMenu(manager);
+		// Other plug-ins can contribute there actions here
+		manager.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+	}
+	
+	private void fillLocalToolBar(IToolBarManager manager) {
+		fillMenu(manager);
+	}
+	
 
 	public void refresh() {
 		treeViewer.refresh();
