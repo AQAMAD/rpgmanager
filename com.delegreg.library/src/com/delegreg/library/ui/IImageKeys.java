@@ -37,11 +37,13 @@ public interface IImageKeys {
 
 	public static final String IMAGES = "icons/folders/Images.png";
 	public static final String DELETEITEM = "icons/actions/Delete.png";
-	public static final String EDITITEM = null;
-	public static final String EXPORT = null;
-	public static final String IMPORT = null;
-	public static final String RENAME = null;
-	public static final String SOLIDIFY = null;
-	public static final String NEWITEM = null;
+
+	public static final String IMPORT = "icons/actions/Import.png"; //$NON-NLS-1$
+	public static final String EXPORT = "icons/actions/Export.png"; //$NON-NLS-1$
+	public static final String SOLIDIFY = "icons/actions/Solidify.png"; //$NON-NLS-1$
+	public static final String NEWITEM = "icons/actions/NewItem.png"; //$NON-NLS-1$
+	public static final String EDITITEM = "icons/actions/Edit.png"; //$NON-NLS-1$
+	public static final String RENAME = "icons/actions/Rename.png"; //$NON-NLS-1$
+	
 	
 }
